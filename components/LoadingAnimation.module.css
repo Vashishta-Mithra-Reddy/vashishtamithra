@@ -1,0 +1,13 @@
+.loadingAnimation {
+    position: fixed; /* Ensures it covers the entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background: black; /* Background to match existing design */
+    font-family: var(--font-satoshi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensures it appears above other content */
+}
