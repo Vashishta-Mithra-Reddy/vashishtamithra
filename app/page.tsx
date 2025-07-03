@@ -1,3 +1,4 @@
+import Projects from "@/components/Projects";
 import Image from "next/image";
 // import LoadingAnimation from "@/components/LoadingAnimation";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold">
         Vashishta Mithra Reddy | V19
       </h1>
+      <Projects/>
     </div>
     </>
   );
