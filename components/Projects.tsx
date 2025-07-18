@@ -88,7 +88,7 @@ const allProjects = [
   },
   {
     title: "V19",
-    description: "This modern portfolio you're viewing.",
+    description: "This portfolio/website you're viewing.",
     link: "https://www.v19.tech/",
     logo: "/logos/nidhi.png",
   },
@@ -98,7 +98,7 @@ export default function Projects() {
   return (
     <section className="w-full min-h-screen text-foreground font-satoshi">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-foreground/60">Stuff I have built.</h2>
         <div className="space-y-6">
           {allProjects.map((project, index) => (
             <FadeInWhenVisible key={index}>
@@ -107,14 +107,14 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 bg-muted/20 hover:bg-muted/30 transition"
+              className="flex items-center gap-4 p-4 bg-muted/20 hover:bg-muted/30 transition group"
             >
               <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-2">
                 <Image
                   src={project.logo}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <div>

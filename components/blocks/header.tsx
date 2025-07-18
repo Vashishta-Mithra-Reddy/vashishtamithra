@@ -12,7 +12,7 @@ return (
               <Image src="/v19.png" width={60} height={60} priority alt="V19 Logo" className="rounded-full"/>
               </Link> */}
             </div>
-            <Navigation />
+            {/* <Navigation /> */}
             <button className="px-6 py-3 rounded-xl font-satoshi bg-foreground text-background text-sm tracking-wide">
               Contact
             </button>
