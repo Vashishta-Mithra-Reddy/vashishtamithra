@@ -1,7 +1,14 @@
 import Image from "next/image";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
+import { title } from "process";
 
 const allProjects = [
+  {
+    title: "Hita",
+    description: "A wellness platform for a healthier lifestyle.",
+    link: "https://hita.v19.tech",
+    logo: "/logos/whykerala.png",
+  },
   {
     title: "Lost Escapes",
     description: "Boutique travel booking experience.",
