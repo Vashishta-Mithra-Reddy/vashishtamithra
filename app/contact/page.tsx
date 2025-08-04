@@ -70,7 +70,7 @@ export default function Contact() {
           <h2 className="text-4xl font-bold text-foreground/60">Get in touch.</h2>
         </div>
 
-        <FadeInWhenVisible>
+        <FadeInWhenVisible> 
           <div className="flex flex-col items-center justify-center gap-8 p-8 rounded-xl">
             <Mail className="w-16 h-16 text-muted" />
             <p className="text-lg text-foreground/60 text-center max-w-md text-balance">
@@ -96,7 +96,7 @@ export default function Contact() {
         </FadeInWhenVisible>
 
         <FadeInWhenVisible>
-          <div className="flex justify-around mt-8 gap-2 py-1 rounded-xl bg-foreground/5 dark:bg-foreground/15">
+          <div className="flex justify-around mt-8 py-1 rounded-xl bg-foreground/5 dark:bg-foreground/15 mx-4 md:mx-2">
             {socials.map((social, index) => (
               <a
                 key={index}
