@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Home } from "lucide-react";
+import { Home, Mail } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function BottomNav() {
   const pathname = usePathname();
   
   const navigationLinks = [
-    { href: "/", label: "Home", icon: <Home  className="h-5 w-5" /> },
+    { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
+    { href: "/contact", label: "Contact", icon: <Mail className="h-5 w-5" /> },
   ];
 
   return (

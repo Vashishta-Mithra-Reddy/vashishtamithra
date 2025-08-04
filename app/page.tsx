@@ -1,6 +1,7 @@
 import Projects from "@/components/Projects";
 import Image from "next/image";
 import LoadingAnimation from "@/components/LoadingAnimation";
+import BottomGradient from "@/components/BottomGradient";
 
 export default function Home() {
   return (

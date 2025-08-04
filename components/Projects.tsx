@@ -9,11 +9,18 @@ const allProjects = [
     link: "https://hita.v19.tech",
     logo: "/logos/whykerala.png",
   },
+  
   {
-    title: "Lost Escapes",
-    description: "Boutique travel booking experience.",
-    link: "https://lostescapes.com/",
-    logo: "/logos/lostescapes.jpg",
+    title: "Why Kerala?",
+    description: "Trip planner to convince friends.",
+    link: "https://whykerala.v19.tech/",
+    logo: "/logos/whykerala.png",
+  },
+  {
+    title: "The Baga Village",
+    description: "Hotel website for a Goa chain.",
+    link: "https://bagavillage.vercel.app/",
+    logo: "/logos/tbv.png",
   },
   {
     title: "Nidhi",
@@ -27,17 +34,12 @@ const allProjects = [
     link: "https://vikraya.v19.tech",
     logo: "/logos/vikraya.png",
   },
+  
   {
-    title: "Why Kerala?",
-    description: "Trip planner to convince friends.",
-    link: "https://whykerala.v19.tech/",
-    logo: "/logos/whykerala.png",
-  },
-  {
-    title: "The Baga Village",
-    description: "Hotel website for a Goa chain.",
-    link: "https://bagavillage.vercel.app/",
-    logo: "/logos/tbv.png",
+    title: "Lost Escapes",
+    description: "Boutique travel booking experience.",
+    link: "https://lostescapes.com/",
+    logo: "/logos/lostescapes.jpg",
   },
   {
     title: "Rohtang Apiary",
@@ -56,12 +58,6 @@ const allProjects = [
     description: "Personal vault with diary and diet logs.",
     link: "https://infernia.v19.tech",
     logo: "/logos/infernia.png",
-  },
-  {
-    title: "Krushi",
-    description: "IoT-based soil and animal monitoring.",
-    link: "https://github.com/Vashishta-Mithra-Reddy/Agro_T",
-    logo: "/logos/krushi.png",
   },
   {
     title: "Kaizen",
@@ -93,11 +89,12 @@ const allProjects = [
     link: "https://kanri.v19.tech/",
     logo: "/logos/karyakramah.png",
   },
+  
   {
-    title: "V19",
-    description: "This portfolio/website you're viewing.",
-    link: "https://www.v19.tech/",
-    logo: "/logos/nidhi.png",
+    title: "Krushi",
+    description: "IoT-based soil and animal monitoring.",
+    link: "https://github.com/Vashishta-Mithra-Reddy/Agro_T",
+    logo: "/logos/krushi.png",
   },
 ];
 
@@ -114,14 +111,14 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 bg-muted/20 hover:bg-muted/30 transition group"
+              className="flex items-center gap-4 p-4 transition group"
             >
               <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-2">
                 <Image
                   src={project.logo}
                   alt={project.title}
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  className="p-1 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <div>

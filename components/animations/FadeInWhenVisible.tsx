@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function FadeInWhenVisible({ children }: { children: React.ReactNode }) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.5, }); // Detect both enter and exit
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5, }); // Detect both enter and exit
 
   useEffect(() => {
     if (inView) {

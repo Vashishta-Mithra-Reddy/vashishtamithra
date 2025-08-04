@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import localfont from "next/font/local";
 
 import "./globals.css";
-import Footer from "@/components/blocks/footer";
+// import Footer from "@/components/blocks/footer";
 import Header from "@/components/blocks/header";
 import BottomNav from "@/components/blocks/bottom-nav";
 import BottomGradient from "@/components/BottomGradient";
@@ -47,13 +47,13 @@ export default function RootLayout({
           enableSystem
         >
           <Header />
-          <div className="px-6 md:px-20 py-80 md:py-80 pt-16 md:pt-28 pb-16 md:pb-20">
+          <div className="px-6 md:px-20 pt-16 md:pt-28 pb-16 md:pb-20">
             {children}
           </div>
           
           <BottomGradient/>
           <BottomNav/>
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>

@@ -36,7 +36,7 @@ export default function LoadingAnimation({ children }: { children: ReactNode }) 
 
       {/* Loading animation overlay */}
       {!isComplete && (
-        <div className={`fixed inset-0 z-50 min-h-screen ${styles.loadingAnimation} bg-background flex items-center justify-center overflow-hidden`}>
+        <div className={`fixed inset-0 z-40 min-h-screen ${styles.loadingAnimation} bg-background flex items-center justify-center overflow-hidden`}>
           <AnimatePresence mode="wait">
             <motion.div
               key="loading-content"
