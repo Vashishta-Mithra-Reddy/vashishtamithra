@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import localfont from "next/font/local";
+import { Toaster } from "@/components/ui/sonner";
 
 import "./globals.css";
 // import Footer from "@/components/blocks/footer";
@@ -50,7 +51,7 @@ export default function RootLayout({
           <div className="px-6 md:px-20 pt-16 md:pt-28 pb-16 md:pb-20">
             {children}
           </div>
-          
+          <Toaster position="bottom-center" />
           <BottomGradient/>
           <BottomNav/>
           {/* <Footer /> */}
