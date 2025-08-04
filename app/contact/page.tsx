@@ -63,7 +63,7 @@ export default function Contact() {
   return (
     <section className="w-full min-h-screen text-foreground font-satoshi">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-2">
           <h2 className="text-4xl font-bold text-foreground/60">Get in touch.</h2>
         </div>
 
