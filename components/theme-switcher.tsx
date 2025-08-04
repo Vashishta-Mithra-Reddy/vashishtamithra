@@ -25,7 +25,7 @@ export function ThemeSwitcher() {
   return (
     <>
       <div
-          className={`flex items-center gap-2 rounded-lg px-4 py-3 text-center transition-all duration-300 hover:bg-foreground/5 hover:text-foreground/90 relative cursor-pointer`}
+          className={`flex items-center gap-2 rounded-xl px-4 py-3 text-center transition-all duration-300 hover:bg-foreground/5 hover:text-foreground/90 relative cursor-pointer`}
           onClick={toggleTheme}
         >
           <Sun className="size-6 rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-0" />
