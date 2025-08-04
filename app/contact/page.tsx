@@ -3,13 +3,52 @@
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible";
 import { Copy, Mail } from "lucide-react";
 import { toast } from "sonner";
+import Image from 'next/image'; // Importing Next.js Image component
+import Instagram from "@/socials/instagram.svg";
+import X from "@/socials/twitter.svg";
+import Ishta from "@/socials/ishta.svg";
+import LinkedIn from "@/socials/linkedin.svg";
+import GitHub from "@/socials/github.svg";
+
+interface SocialMedia {
+  name: string;
+  url: string;
+  icon: string;
+}
 
 export default function Contact() {
   const email = "me@vashishtamithra.com";
+  const socials: SocialMedia[] = [
+    {
+      name: "X (Twitter)",
+      url: "https://x.com/v19tech",
+      icon: "/socials/twitter.svg",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/Vashishta-Mithra-Reddy",
+      icon: "/socials/github.svg",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/vashishta-mithra/",
+      icon: "/socials/linkedin.svg",
+    },
+    {
+      name: "Instagram",
+      url: "https://instagram.com/vashishta_mithra_reddy",
+      icon: "/socials/instagram.svg",
+    },
+    {
+      name: "Ishta",
+      url: "https://ishta.v19.tech/vashishta",
+      icon: "/socials/ishta.svg",
+    },
+  ];
 
   const handleCopyEmail = async () => {
     if (typeof window === "undefined" || !navigator?.clipboard?.writeText) {
-      toast.error("Clipboard not supported in this environment.");
+      toast.error("Clipboard API is not supported in this environment.");
       return;
     }
 
@@ -24,12 +63,13 @@ export default function Contact() {
   return (
     <section className="w-full min-h-screen text-foreground font-satoshi">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center text-foreground/60">Get in touch.</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-foreground/60">Get in touch.</h2>
+        </div>
 
         <FadeInWhenVisible>
           <div className="flex flex-col items-center justify-center gap-8 p-8 rounded-xl">
             <Mail className="w-16 h-16 text-muted" />
-            <h3 className="text-2xl font-semibold text-foreground/90">Email Me</h3>
             <p className="text-lg text-foreground/60 text-center max-w-md">
               Feel free to reach out for collaborations, questions, or just to say hello!
             </p>
@@ -49,6 +89,30 @@ export default function Contact() {
                 <Copy className="w-6 h-6 text-foreground/60" />
               </button>
             </div>
+          </div>
+        </FadeInWhenVisible>
+
+        <FadeInWhenVisible>
+          <div className="flex justify-around mt-8 gap-2 py-1 rounded-xl bg-foreground/5 dark:bg-foreground/15">
+            {socials.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 transition-all duration-300 group"
+                aria-label={social.name}
+              >
+                {/* Using next/image for social icons */}
+                <Image
+                  src={social.icon}
+                  alt={social.name}
+                  width={28} // Width of the icon
+                  height={28} // Height of the icon
+                  className="group-hover:text-foreground/90 transition-colors"
+                />
+              </a>
+            ))}
           </div>
         </FadeInWhenVisible>
       </div>

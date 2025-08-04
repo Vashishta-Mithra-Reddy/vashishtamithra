@@ -44,7 +44,7 @@ const allProjects = [
   {
     title: "Rohtang Apiary",
     description: "For a bee farmer in the Himalayas.",
-    link: "https://rohtangapiary.vercel.app/",
+    link: "https://www.rohtangapiary.com/",
     logo: "/logos/rohtang_apiary.png",
   },
   {
