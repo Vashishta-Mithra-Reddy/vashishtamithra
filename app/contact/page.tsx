@@ -70,7 +70,7 @@ export default function Contact() {
         <FadeInWhenVisible>
           <div className="flex flex-col items-center justify-center gap-8 p-8 rounded-xl">
             <Mail className="w-16 h-16 text-muted" />
-            <p className="text-lg text-foreground/60 text-center max-w-md">
+            <p className="text-lg text-foreground/60 text-center max-w-md text-balance">
               Feel free to reach out for collaborations, questions, or just to say hello!
             </p>
 
