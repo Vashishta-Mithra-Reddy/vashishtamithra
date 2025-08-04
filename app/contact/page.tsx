@@ -44,7 +44,7 @@ export default function Contact() {
 
               <button
                 onClick={handleCopyEmail}
-                className="rounded-xl flex items-center justify-center gap-4 border-dashed border-2 border-foreground/60 hover:bg-foreground/5 py-2 px-4 cursor-pointer"
+                className="rounded-xl flex items-center justify-center gap-4 border-dashed border-2 border-foreground/60 hover:bg-foreground/5 py-2 px-4 cursor-pointer active:scale-95 transition-all duration-300"
               >
                 <Copy className="w-6 h-6 text-foreground/60" />
               </button>
