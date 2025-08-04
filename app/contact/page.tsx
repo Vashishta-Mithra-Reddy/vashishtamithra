@@ -4,6 +4,7 @@ import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible";
 import { Copy, Mail } from "lucide-react";
 import { toast } from "sonner";
 import Image from 'next/image'; // Importing Next.js Image component
+import useSound from "use-sound";
 import Instagram from "@/socials/instagram.svg";
 import X from "@/socials/twitter.svg";
 import Ishta from "@/socials/ishta.svg";
@@ -18,6 +19,7 @@ interface SocialMedia {
 
 export default function Contact() {
   const email = "me@vashishtamithra.com";
+  const [click] = useSound("/notification.wav", { volume: 0.20 });
   const socials: SocialMedia[] = [
     {
       name: "X (Twitter)",
@@ -58,6 +60,7 @@ export default function Contact() {
     } catch (err) {
       toast.error("Failed to copy email.");
     }
+    click();
   };
 
   return (
