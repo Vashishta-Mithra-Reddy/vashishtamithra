@@ -18,7 +18,7 @@ return (
             <ThemeSwitcher/>
             <Link
               href="/contact" 
-              className="px-6 py-3 rounded-xl font-satoshi bg-foreground text-background text-sm tracking-wide hover:bg-foreground/90 active:scale-95 transition-all duration-300"
+              className="px-6 py-3 rounded-xl font-satoshi bg-foreground text-background text-sm tracking-wide hover:bg-foreground/90"
             >
               Contact
             </Link>
