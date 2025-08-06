@@ -7,7 +7,7 @@ const allProjects = [
     title: "Hita",
     description: "A wellness platform for a healthier lifestyle.",
     link: "https://hita.v19.tech",
-    logo: "/logos/whykerala.png",
+    logo: "/logos/hita.png",
   },
   
   {

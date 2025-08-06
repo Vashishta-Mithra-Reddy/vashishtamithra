@@ -3,13 +3,9 @@
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible";
 import { Copy, Mail } from "lucide-react";
 import { toast } from "sonner";
-import Image from 'next/image'; // Importing Next.js Image component
+import Image from 'next/image'; 
+import Link from "next/link";
 import useSound from "use-sound";
-import Instagram from "@/socials/instagram.svg";
-import X from "@/socials/twitter.svg";
-import Ishta from "@/socials/ishta.svg";
-import LinkedIn from "@/socials/linkedin.svg";
-import GitHub from "@/socials/github.svg";
 
 interface SocialMedia {
   name: string;
@@ -98,7 +94,7 @@ export default function Contact() {
         <FadeInWhenVisible>
           <div className="flex justify-around mt-8 py-1 rounded-xl bg-foreground/5 dark:bg-foreground/15 mx-4 md:mx-2">
             {socials.map((social, index) => (
-              <a
+              <Link
                 key={index}
                 href={social.url}
                 target="_blank"
@@ -106,15 +102,14 @@ export default function Contact() {
                 className="p-3 transition-all duration-300 group"
                 aria-label={social.name}
               >
-                {/* Using next/image for social icons */}
                 <Image
                   src={social.icon}
                   alt={social.name}
-                  width={28} // Width of the icon
-                  height={28} // Height of the icon
+                  width={28} 
+                  height={28}
                   className="group-hover:text-foreground/90 transition-colors"
                 />
-              </a>
+              </Link>
             ))}
           </div>
         </FadeInWhenVisible>
