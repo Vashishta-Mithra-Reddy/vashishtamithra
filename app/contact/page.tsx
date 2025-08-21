@@ -107,7 +107,7 @@ export default function Contact() {
                   alt={social.name}
                   width={28} 
                   height={28}
-                  className="group-hover:text-foreground/90 transition-colors"
+                  className="group-hover:text-foreground/90 group-hover:scale-110 transition-all duration-300"
                 />
               </Link>
             ))}
