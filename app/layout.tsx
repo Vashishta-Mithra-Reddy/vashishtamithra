@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import localfont from "next/font/local";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 // import Footer from "@/components/blocks/footer";
@@ -50,6 +51,7 @@ export default function RootLayout({
           <Header />
           <div className="px-6 md:px-20 pt-16 md:pt-28 pb-16 md:pb-20">
             {children}
+            <Analytics />
           </div>
           <Toaster position="bottom-center" />
           <BottomGradient/>
