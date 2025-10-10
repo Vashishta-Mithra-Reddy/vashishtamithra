@@ -4,6 +4,12 @@ import { title } from "process";
 
 const allProjects = [
   {
+    title: "Citadel",
+    description: "A password manager",
+    link: "https://citadel.v19.tech/",
+    logo: "/logos/citadel.png"
+  },
+  {
     title: "Hita",
     description: "A wellness platform for a healthier lifestyle.",
     link: "https://hita.v19.tech",
