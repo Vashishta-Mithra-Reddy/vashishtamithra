@@ -49,7 +49,7 @@ export default function RootLayout({
           enableSystem
         >
           <Header />
-          <div className="px-6 md:px-20 pt-16 md:pt-28 pb-16 md:pb-20">
+          <div className="px-6 md:px-20 pt-16 md:pt-24 pb-16 md:pb-20">
             {children}
             <Analytics />
           </div>

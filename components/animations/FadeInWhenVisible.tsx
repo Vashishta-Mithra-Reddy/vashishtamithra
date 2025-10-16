@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function FadeInWhenVisible({ children }: { children: React.ReactNode }) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5, }); // Detect both enter and exit
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3, });
 
   useEffect(() => {
     if (inView) {
@@ -14,14 +14,14 @@ export default function FadeInWhenVisible({ children }: { children: React.ReactN
         opacity: 1,
         y: 0,
         scale: 1,
-        transition: { duration: 0.8, ease: 'easeOut' },
+        transition: { duration: 0.6, ease: 'easeInOut' },
       });
     } else {
       controls.start({
         opacity: 0,
         y: 30,
         scale: 0.95,
-        transition: { duration: 0.5, ease: 'easeIn' },
+        transition: { duration: 0.5, ease: 'easeInOut' },
       });
     }
   }, [controls, inView]);

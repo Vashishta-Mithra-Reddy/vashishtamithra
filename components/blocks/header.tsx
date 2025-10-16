@@ -17,6 +17,12 @@ return (
             <div className="flex flex-row gap-4 items-center">
             <ThemeSwitcher/>
             <Link
+              href="/store" 
+              className="px-6 py-3 rounded-xl font-satoshi bg-foreground/10 text-foreground text-sm tracking-wide hover:bg-foreground/15"
+            >
+              Store
+            </Link>
+            <Link
               href="/contact" 
               className="px-6 py-3 rounded-xl font-satoshi bg-foreground text-background text-sm tracking-wide hover:bg-foreground/90"
             >
