@@ -18,7 +18,13 @@ const allProjects = [
     logo: "/logos/hita.png",
     screenshot: "/screenshots/webp/hita.webp",        
   },
-  
+  {
+    title: "Saransha",
+    description: "Instagram reel transcriber",
+    link: "https://saransha.vercel.app/",
+    logo: "/logos/v19.png",
+    screenshot: "/screenshots/webp/saransha.webp",        
+  },
   {
     title: "Why Kerala?",
     description: "Trip planner to convince friends.",
