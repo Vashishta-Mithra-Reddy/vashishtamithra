@@ -6,9 +6,10 @@ import { Copy, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import useSound from 'use-sound';
 import FadeInWhenVisible from '@/components/animations/FadeInWhenVisible';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
+import Spinner from '@/components/animations/Spinner';
 
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const status = searchParams.get('status');
   const paymentId = searchParams.get('payment_id') || '';
@@ -78,5 +79,13 @@ export default function SuccessPage() {
         </FadeInWhenVisible>
       </div>
     </section>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <SuccessContent />
+    </Suspense>
   );
 }
