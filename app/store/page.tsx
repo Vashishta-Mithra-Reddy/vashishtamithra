@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import useSound from 'use-sound';
 import { toast } from 'sonner';
+import { Suspense } from 'react';
+import Spinner from '@/components/animations/Spinner';
 
 type Product = {
   id: string; 
@@ -44,7 +46,7 @@ async function startStaticCheckout(productId: string) {
   window.location.href = checkoutUrl;
 }
 
-export default function StorePage() {
+function StoreContent() {
   const searchParams = useSearchParams();
   const status = searchParams.get('status');
   const [click] = useSound('/click.wav', { volume: 0.2 });
@@ -106,5 +108,13 @@ export default function StorePage() {
         </div> */}
       </div>
     </section>
+  );
+}
+
+export default function StorePage() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <StoreContent />
+    </Suspense>
   );
 }
