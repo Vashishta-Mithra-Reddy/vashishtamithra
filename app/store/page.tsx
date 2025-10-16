@@ -17,14 +17,14 @@ type Product = {
 
 const PRODUCTS: Product[] = [
   {
-    id: 'pdt_WVKCL3hzZK4tLFRFiBnZR',
+    id: 'pdt_UQGMdDZWiH1LzU8CFFPwZ',
     title: 'Guide to life.',
     description: 'A guide to living your life at its fullest.',
     priceLabel: '100 Rs.',
     image: '/logos/citadel.png',
   },
   {
-    id: 'pdt_gaPTcmuEt8evQ1pPIOqXf',
+    id: 'pdt_WJab3E8YXUxbJBgL2UCTU',
     title: 'Why Kerala? Supporter Pack',
     description: 'Support the travel planner project.',
     priceLabel: '10 Rs.',
