@@ -1,9 +1,15 @@
 import Image from "next/image";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
-import { title } from "process";
 import Link from "next/link";
 
 const allProjects = [
+  {
+    title: "Ahāra",
+    description: "A food diary and analytics platform.",
+    link: "https://ahara.v19.tech/",
+    logo: "/logos/ahara.svg",
+    screenshot: "/screenshots/webp/ahara.webp",
+  },
   {
     title: "Citadel",
     description: "A password manager",
@@ -148,7 +154,7 @@ export default function Projects() {
                     alt={`${project.title} background`}
                     width={460}
                     height={200}
-                    className="absolute top-0 left-0 w-full h-full object-cover blur-lg opacity-30 dark:opacity-40 scale-[1.04] contrast-200 saturate-200 brightness-110 rounded-xl z-0"
+                    className="absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.02] contrast-200 saturate-200 brightness-120 rounded-xl z-0"
                     aria-hidden="true"
                   />
 
@@ -165,7 +171,7 @@ export default function Projects() {
 
 
               <div className="flex gap-1 w-full py-2.5 rounded-2xl px-2 border-2 border-foreground/10 border-dotted">
-              <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-2">
+              <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-3.5">
                 <Image
                   src={project.logo}
                   alt={project.title}
