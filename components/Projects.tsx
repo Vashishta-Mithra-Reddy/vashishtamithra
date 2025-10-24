@@ -3,13 +3,13 @@ import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import Link from "next/link";
 
 const allProjects = [
-  {
-    title: "Ahāra",
-    description: "A food diary and analytics platform.",
-    link: "https://ahara.v19.tech/",
-    logo: "/logos/ahara.svg",
-    screenshot: "/screenshots/webp/ahara.webp",
-  },
+  // {
+  //   title: "Ahāra",
+  //   description: "A food diary and analytics platform.",
+  //   link: "https://ahara.v19.tech/",
+  //   logo: "/logos/ahara.svg",
+  //   screenshot: "/screenshots/webp/ahara.webp",
+  // },
   {
     title: "Citadel",
     description: "A password manager",
