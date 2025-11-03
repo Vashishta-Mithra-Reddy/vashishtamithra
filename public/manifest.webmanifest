@@ -1,0 +1,27 @@
+{
+  "name": "V19 • Vashishta Mithra Reddy",
+  "short_name": "V19",
+  "description": "Portfolio of Vashishta Mithra Reddy (v19.tech)",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "background_color": "#0a0a0a",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/logos/v19.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/v19.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

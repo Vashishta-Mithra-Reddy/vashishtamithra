@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Offline • V19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { --bg: #0a0a0a; --fg: #ededed; --muted: #9ca3af; }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+      }
+      .card {
+        padding: 24px 28px;
+        border-radius: 16px;
+        border: 2px dashed #3a3a3a;
+        background: #111;
+        max-width: 560px;
+        text-align: center;
+      }
+      h1 { margin: 0 0 12px; font-size: 20px; }
+      p { margin: 0 0 16px; color: var(--muted); }
+      a {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: #ededed;
+        color: #0a0a0a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>You’re offline</h1>
+      <p>Some features aren’t available. We’ll reconnect when your network is back.</p>
+      <a href="/">Try again</a>
+    </div>
+  </body>
+</html>

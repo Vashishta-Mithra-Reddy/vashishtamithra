@@ -8,12 +8,13 @@ import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
-import ConsoleBrand from "@/components/ConsoleBrand";
 import Footer from "@/components/blocks/footer";
 import Header from "@/components/blocks/header";
 import BottomNav from "@/components/blocks/bottom-nav";
 import BottomGradient from "@/components/BottomGradient";
+import ConsoleBrand from "@/components/ConsoleBrand";
 // import GlobalBackground from "@/components/GlobalBackground";
+import PWA from "@/components/PWA";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -23,6 +24,22 @@ export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
   title: "Vashishta Mithra Reddy",
   description: "Vashishta Mithra Reddy's Portfolio",
+  applicationName: "V19",
+  manifest: "/manifest.webmanifest",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "V19",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 const geistSans = Geist({
@@ -68,6 +85,7 @@ export default function RootLayout({
         >
           {/* Console brand logs */}
           <ConsoleBrand />
+          <PWA />
           {/* <GlobalBackground /> */}
           <Header />
           <div className="px-6 md:px-20 pt-16 md:pt-24 pb-16 md:pb-20">
