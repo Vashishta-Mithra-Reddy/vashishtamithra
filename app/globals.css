@@ -37,6 +37,8 @@
   --font-mono: var(--font-geist-mono);
   --font-girl: var(--font-the-girl-next-door);
   --font-satoshi: var(--font-satoshi);
+  --font-bricolage: var(--font-bricolage-grotesque);
+  --font-jakarta: var(--font-plus-jakarta-sans);
 }
 
 /* @media (prefers-color-scheme: dark) {

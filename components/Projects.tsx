@@ -3,23 +3,25 @@ import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import Link from "next/link";
 
 const allProjects = [
-  // {
-  //   title: "Ahāra",
-  //   description: "A food diary and analytics platform.",
-  //   link: "https://ahara.v19.tech/",
-  //   logo: "/logos/ahara.svg",
-  //   screenshot: "/screenshots/webp/ahara.webp",
-  // },
+  {
+    title: "Ahāra",
+    description: "Food diary and trigger analysis platform.",
+    link: "https://ahara.v19.tech/",
+    logo: "/logos/ahara.svg",
+    screenshot: "/screenshots/webp/ahara.webp",
+    status: "Currently Building...",
+    platform: "Native & Web"
+  },
   {
     title: "Citadel",
-    description: "A password manager",
+    description: "Password manager",
     link: "https://citadel.v19.tech/",
     logo: "/logos/citadel.png",
     screenshot: "/screenshots/webp/citadel.webp",
   },
   {
     title: "Hita",
-    description: "A wellness platform for a healthier lifestyle.",
+    description: "Wellness platform for a healthier you.",
     link: "https://hita.v19.tech",
     logo: "/logos/hita.png",
     screenshot: "/screenshots/webp/hita.webp",        
@@ -33,7 +35,7 @@ const allProjects = [
   },
   {
     title: "Why Kerala?",
-    description: "Trip planner to convince friends.",
+    description: "Built to convince my friends about Kerala.",
     link: "https://whykerala.v19.tech/",
     logo: "/logos/whykerala.png",
     screenshot: "/screenshots/webp/whykerala.webp",        
@@ -166,6 +168,22 @@ export default function Projects() {
                     height={200}
                     className="relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2"
                   />
+
+                  {project.status && (
+                    <div className="absolute bottom-5 left-2 z-20">
+                      <span className="px-2.5 py-1 text-xs rounded-full bg-white/10 text-white border-2 border-white/5 backdrop-blur-sm">
+                        {project.status}
+                      </span>
+                    </div>
+                  )}
+
+                  {project.platform && (
+                    <div className="absolute bottom-5 right-2 z-20">
+                      <span className="px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/30 text-white border-2 border-blue-500/30 backdrop-blur-sm">
+                        {project.platform}
+                      </span>
+                    </div>
+                  )}
                 </div>
               )}
 

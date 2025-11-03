@@ -36,6 +36,7 @@ async function startStaticCheckout(productId: string) {
   const res = await fetch(`/checkout?productId=${encodeURIComponent(productId)}`, {
     method: 'GET',
   });
+
   if (!res.ok) {
     const text = await res.text();
     throw new Error(text || 'Checkout request failed');
@@ -49,8 +50,9 @@ async function startStaticCheckout(productId: string) {
 function StoreContent() {
   const searchParams = useSearchParams();
   const status = searchParams.get('status');
-  const [click] = useSound('/click.wav', { volume: 0.2 });
-
+  const [click] = useSound('/notification.wav', { volume: 0.2 });
+  const thingy = "{}"
+  
   if (status === 'succeeded') {
     toast.success('Payment successful! Thanks for your support.');
   } else if (status === 'cancelled') {
@@ -60,7 +62,8 @@ function StoreContent() {
   return (
     <section className="w-full min-h-screen text-foreground font-satoshi">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center text-foreground/60">Store</h2>
+        <h2 className="text-3xl font-bold text-center text-foreground/60">Store</h2>
+        <h3 className="text-foreground/30 text-center mb-12 font-bricolage font-bold">{thingy[0]}Testing out payment integration{thingy[1]}</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PRODUCTS.map((product) => (
