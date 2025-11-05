@@ -75,7 +75,7 @@ export default function Contact() {
         <DarkVeil />
 
       </div>
-      <div className="max-w-7xl mx-auto z-50">
+      <div className="max-w-7xl mx-auto z-50 md:pt-12">
         <div className="text-center mb-2">
           <h2 className="text-4xl font-bold text-foreground/60 text-center flex items-center justify-center">
             {headingWords.map((word, index) => (
