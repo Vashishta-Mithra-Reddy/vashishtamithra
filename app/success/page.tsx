@@ -32,7 +32,7 @@ function SuccessContent() {
   };
 
   return (
-    <section className="w-full min-h-screen text-foreground font-satoshi">
+    <section className="w-full min-h-screen text-foreground font-satoshi wrapperx flex-center">
       <div className="max-w-7xl mx-auto">
         <FadeInWhenVisible>
           <div className="flex flex-col items-center gap-6 p-12 px-16 rounded-2xl border-2 border-foreground/10 border-dotted">

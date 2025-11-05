@@ -1,30 +1,44 @@
+"use client";
 import Link  from "next/link";
 import Image from "next/image";
-import ThemeSwitcher from "../theme-switcher";
+import Beams from "../Beams";
+
 
 export default function Footer() {
   const email = "me@vashishtamithra.com";
   const x = "{}";
   const y = "{/**/}";
   const socials = [
-    { name: "X (Twitter)", url: "https://x.com/v19tech", icon: "/socials/twitter.svg" },
-    { name: "GitHub", url: "https://github.com/Vashishta-Mithra-Reddy", icon: "/socials/github.svg" },
+    { name: "X (Twitter)", url: "https://x.com/v19tech", icon: "/socials/twitter.svg", invert:true },
+    { name: "GitHub", url: "https://github.com/Vashishta-Mithra-Reddy", icon: "/socials/github.svg", invert:true },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/vashishta-mithra/", icon: "/socials/linkedin.svg" },
     { name: "Instagram", url: "https://instagram.com/vashishta_mithra_reddy", icon: "/socials/instagram.svg" },
     { name: "Ishta", url: "https://ishta.v19.tech/vashishta", icon: "/socials/ishta.svg" },
   ];
 
   return (
-    <footer className="w-full">
-      <div className="w-full max-w-7xl mx-auto mb-16 rounded-xl backdrop-blur-3xl border-none md:border-2 border-foreground/10 md:border-dotted bg-background/60">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 md:p-10">
+    <footer className="w-full mb-12 md:mb-0">
+      <div className="w-full mx-auto backdrop-blur-3xl md:px-16 pb-8 border-none md:border-t-2 border-foreground/10 dark:md:border-none md:border-dotted bg-background/60">
+        <div className="absolute inset-0 -z-10 rounded-xl hidden dark:block">
+          <Beams
+            beamWidth={2}
+            beamHeight={15}
+            beamNumber={12}
+            lightColor="#ffffff"
+            speed={2}
+            noiseIntensity={1.75}
+            scale={0.2}
+            rotation={0}
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 md:py-10 md:px-8">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start">
-            <Link href="/" className="text-3xl font-bold font-satoshi mb-3">V19</Link>
+            <Link href="/" className="text-3xl font-bold font-satoshi mb-3 text-foreground">V19</Link>
             <p className="font-bricolage text-foreground/80">{x[0]+`Vashishta Mithra Reddy`+x[1]}</p>
-            <p className="font-bricolage text-foreground/60">{` Human, `+`Dev, `+`Designer,`}</p>
-            <p className="font-bricolage text-foreground/60 italic">& A Freelancer.</p>
-            <p className="font-bricolage text-foreground/60 italic">{x[0]+"21, Male"+x[1]}</p>
+            <p className="font-bricolage text-foreground/50 italic">{` Human, `+`Dev, `+`Designer,`}</p>
+            <p className="font-bricolage text-foreground/40 italic">& A Freelancer.</p>
+            <p className="font-bricolage text-foreground/30 italic">{x[0]+"21, Male"+x[1]}</p>
           </div>
 
 
@@ -50,7 +64,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl hover:bg-foreground/10 transition"
+                  className={`p-2 rounded-xl hover:bg-foreground/10 transition ${social.invert ? "dark:invert-100" : ""}`}
                   aria-label={social.name}
                 >
                   <Image

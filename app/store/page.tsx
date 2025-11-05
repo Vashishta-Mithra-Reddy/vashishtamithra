@@ -6,6 +6,8 @@ import useSound from 'use-sound';
 import { toast } from 'sonner';
 import { Suspense } from 'react';
 import Spinner from '@/components/animations/Spinner';
+import { motion } from "framer-motion";
+// import Aurora from '@/components/Aurora';
 
 type Product = {
   id: string; 
@@ -59,13 +61,42 @@ function StoreContent() {
     toast('Payment cancelled.');
   }
 
-  return (
-    <section className="w-full min-h-screen text-foreground font-satoshi">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-foreground/60">Store</h2>
-        <h3 className="text-foreground/30 text-center mb-12 font-bricolage font-bold">{thingy[0]}Testing out payment integration{thingy[1]}</h3>
+  const headingWords = ["Store"];
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  return (
+    <section className="w-full text-foreground flex items-center justify-center font-satoshi wrapperx md:pb-36">
+      {/* <div className='w-full h-full absolute -top-3/12 left-0 dark:block hidden'>
+      <Aurora
+        colorStops={["#ff0000", "#8000ff", "#5227FF"]}
+        blend={0.5}
+        amplitude={1}
+        speed={0.5}
+      />
+      </div> */}
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-foreground/60 flex items-center justify-center">
+          {headingWords.map((word, index) => (
+            <motion.span
+              key={index}
+              className="inline-block mr-2"
+              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h2>
+        <motion.h3
+          className="text-foreground/30 text-center mb-12 font-bricolage font-bold"
+          initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, type: "decay" }}
+        >
+          {thingy[0]}Testing out payment integration{thingy[1]}
+        </motion.h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl">
           {PRODUCTS.map((product) => (
             <div
               key={product.id}

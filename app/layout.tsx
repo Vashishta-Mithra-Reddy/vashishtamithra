@@ -77,7 +77,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} ${satoshi.variable} ${bricolage.variable} ${jakartaSans.variable} antialiased flex flex-col items-center`}>
+      <body className={`${geistSans.className} ${satoshi.variable} ${bricolage.variable} ${jakartaSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -88,7 +88,7 @@ export default function RootLayout({
           <PWA />
           {/* <GlobalBackground /> */}
           <Header />
-          <div className="px-6 md:px-20 pt-16 md:pt-24 pb-16 md:pb-20">
+          <div>
             {children}
             <Analytics />
           </div>

@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 
 const allProjects = [
   {
@@ -132,11 +135,28 @@ const allProjects = [
   },
 ];
 
+const thingy = ["Stuff ", "I ", "have ", "built."];
+// const thingy = "Stuff I have built.";
+
 export default function Projects() {
   return (
-    <section className="w-full min-h-screen text-foreground font-satoshi">
+    <section className="w-full min-h-screen text-foreground font-satoshi wrapperx">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 text-center text-foreground/60">Stuff I have built.</h2>
+        <h2
+          className="text-4xl font-bold mb-20 text-center text-foreground/60 flex items-center justify-center"
+        >
+          {thingy.map((word, index) => (
+            <motion.span
+              key={index}
+              className="inline-block mr-2"
+              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{duration:0.8, delay: index * 0.2, type: "decay" }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {allProjects.map((project, index) => (
             <FadeInWhenVisible key={index}>
