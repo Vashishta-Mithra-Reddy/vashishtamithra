@@ -18,7 +18,7 @@ export default function Header() {
         >
           <div className="w-full max-w-7xl flex justify-between items-center p-3 px-2 md:px-5 text-sm">
             <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"} className="relative text-3xl pl-4 font-bold font-satoshi">
+              <Link href={"/"} className="relative text-3xl md:pl-4 font-bold font-satoshi">
                 <motion.span
                   className="relative inline-flex items-center z-10 overflow-hidden"
                   style={{ width: 80, height: 36, willChange: "transform, filter" }}
@@ -29,7 +29,7 @@ export default function Header() {
                     {!hoverCar ? (
                       <motion.span
                         key="logo-v19"
-                        className="absolute inset-0 flex items-center pl-2"
+                        className="absolute inset-0 flex items-center md:pl-2"
                         initial={{ x: 60, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: 60, opacity: 0 }}
@@ -40,7 +40,7 @@ export default function Header() {
                     ) : (
                       <motion.div
                         key="logo-car"
-                        className="absolute inset-0 flex items-center w-full pl-4"
+                        className="absolute inset-0 flex items-center w-full md:pl-4"
                         initial={{ x: -60, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -60, opacity: 0 }}
@@ -82,7 +82,7 @@ export default function Header() {
               <ThemeSwitcher/>
               <Link
                 href="/store" 
-                className="px-6 py-3 rounded-xl font-satoshi bg-foreground/10 text-foreground text-sm tracking-wide hover:bg-foreground/15"
+                className="hidden md:block px-6 py-3 rounded-xl font-satoshi bg-foreground/10 text-foreground text-sm tracking-wide hover:bg-foreground/15"
               >
                 Store
               </Link>
