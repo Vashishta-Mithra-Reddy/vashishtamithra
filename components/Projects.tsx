@@ -6,7 +6,17 @@ import { motion } from "framer-motion";
 
 
 const allProjects = [
-  {
+  { 
+    slug: "contxt",
+    title: "Contxt",
+    description: "RAG as a service.",
+    link: "https://contxt.v19.tech/",
+    logo: "/logos/contxt.svg",
+    screenshot: "/screenshots/webp/contxt.webp",
+    status: "Currently Building..."
+  },
+  { 
+    slug: "ahara",
     title: "Ahāra",
     description: "Food diary and trigger analysis platform.",
     link: "https://ahara.v19.tech/",
@@ -16,6 +26,7 @@ const allProjects = [
     platform: "Native & Web"
   },
   {
+    slug: "citadel",
     title: "Citadel",
     description: "Password manager",
     link: "https://citadel.v19.tech/",
@@ -23,6 +34,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/citadel.webp",
   },
   {
+    slug: "hita",
     title: "Hita",
     description: "Wellness platform for a healthier you.",
     link: "https://hita.v19.tech",
@@ -30,6 +42,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/hita.webp",        
   },
   {
+    slug: "saransha",
     title: "Saransha",
     description: "Instagram reel transcriber",
     link: "https://saransha.vercel.app/",
@@ -37,6 +50,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/saransha.webp",        
   },
   {
+    slug: "whykerala",
     title: "Why Kerala?",
     description: "Built to convince my friends about Kerala.",
     link: "https://whykerala.v19.tech/",
@@ -44,6 +58,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/whykerala.webp",        
   },
   {
+    slug: "thebagavillage",
     title: "The Baga Village",
     description: "Hotel website for a Goa chain.",
     link: "https://bagavillage.vercel.app/",
@@ -51,6 +66,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/thebagavillage.webp",        
   },
   {
+    slug: "nidhi",
     title: "Nidhi",
     description: "Decentralized fundraising with rewards.",
     link: "https://nidhi.v19.tech",
@@ -58,6 +74,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/nidhi.webp",        
   },
   {
+    slug: "vikraya",
     title: "Vikraya",
     description: "Blockchain crop auction for farmers.",
     link: "https://vikraya.v19.tech",
@@ -66,6 +83,7 @@ const allProjects = [
   },
   
   {
+    slug: "lostescapes",
     title: "Lost Escapes",
     description: "Boutique travel booking experience.",
     link: "https://lostescapes.com/",
@@ -73,6 +91,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/lostescapes.webp",        
   },
   {
+    slug: "rohtangapiary",
     title: "Rohtang Apiary",
     description: "For a bee farmer in the Himalayas.",
     link: "https://www.rohtangapiary.com/",
@@ -80,6 +99,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/rohtangapiary.webp",        
   },
   {
+    slug: "doppleganger",
     title: "Doppleganger",
     description: "Live interest-based chat matching.",
     link: "https://xdoppleganger.vercel.app",
@@ -87,13 +107,15 @@ const allProjects = [
     screenshot: "/screenshots/webp/doppleganger.webp",        
   },
   {
+    slug: "infernia",
     title: "Infernia (Dragon's Realm)",
     description: "Personal vault with diary and diet logs.",
     link: "https://infernia.v19.tech",
     logo: "/logos/infernia.png",  
     screenshot: "/screenshots/webp/infernia.webp",        
   },
-  {
+  { 
+    slug: "ishta",
     title: "Ishta.",
     description: "Personal identity showcase platform.",
     link: "https://ishta.v19.tech",
@@ -101,6 +123,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/ishta.webp",        
   },
   {
+    slug: "whitewaters",
     title: "White Waters",
     description: "Adventure booking site.",
     link: "https://whitewaters.vercel.app",
@@ -108,6 +131,7 @@ const allProjects = [
     screenshot: "/screenshots/webp/whitewaters.webp",        
   },
   {
+    slug: "karyakramah",
     title: "Kāryakramah",
     description: "Venue and service provider booking SaaS.",
     link: "https://karyakramah.v19.tech",
@@ -115,19 +139,22 @@ const allProjects = [
     screenshot: "/screenshots/webp/karyakramah.webp",        
   },
   {
+    slug: "kanri",
     title: "Kanri | Kāryakramah",
     description: "Venue backend management dashboard.",
     link: "https://kanri.v19.tech/",
     logo: "/logos/karyakramah.png",  
     screenshot: "/screenshots/webp/kanri.webp",        
   },
-  {
+  { 
+    slug: "kaizen",
     title: "Kaizen",
     description: "Gamified Android fitness app.",
     link: "https://www.vashishtamithra.com/",
     logo: "/logos/kaizen.png",       
   },
-  {
+  { 
+    slug: "krushi",
     title: "Krushi",
     description: "IoT-based soil and animal monitoring.",
     link: "https://github.com/Vashishta-Mithra-Reddy/Agro_T",
