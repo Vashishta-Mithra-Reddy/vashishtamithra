@@ -34,8 +34,13 @@ export function generateStaticParams(): { slug: string }[] {
   return getAllWorkSlugs().map(slug => ({ slug }));
 }
 
-export default function WorkPage({ params }: { params: { slug: string } }) {
-  const item = getWorkBySlug(params.slug);
+export default async function WorkPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+	const { slug } = await params;
+  const item = getWorkBySlug(slug);
   if (!item) return notFound();
 
   return (
