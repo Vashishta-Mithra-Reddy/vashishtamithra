@@ -70,11 +70,11 @@ export default function Contact() {
 
   return (
     <section className="w-full pb-16 text-foreground font-satoshi flex items-center justify-center wrapperx md:pb-36">
-      <div className="w-full h-full absolute top-0 left-0 dark:block hidden">
+      {/* <div className="w-full h-full absolute top-0 left-0 dark:block hidden">
 
         <DarkVeil />
 
-      </div>
+      </div> */}
       <div className="max-w-7xl mx-auto z-50 md:pt-12">
         <div className="text-center mb-2">
           <h2 className="text-4xl font-bold text-foreground/60 text-center flex items-center justify-center">

@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 import { Suspense } from 'react';
 import Spinner from '@/components/animations/Spinner';
 import { motion } from "framer-motion";
+import FadeInWhenVisible from '@/components/animations/FadeInWhenVisible';
 // import Aurora from '@/components/Aurora';
 
 type Product = {
@@ -81,7 +82,7 @@ function StoreContent() {
               className="inline-block mr-2"
               initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
             >
               {word}
             </motion.span>
@@ -91,13 +92,14 @@ function StoreContent() {
           className="text-foreground/30 text-center mb-12 font-bricolage font-bold"
           initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, type: "decay" }}
+          transition={{ duration: 0.7, ease: "easeIn" }}
         >
           {thingy[0]}Testing out payment integration{thingy[1]}
         </motion.h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl">
           {PRODUCTS.map((product) => (
+            <FadeInWhenVisible>
             <div
               key={product.id}
               className="p-6 rounded-xl border-2 border-foreground/10 border-dotted transition"
@@ -134,6 +136,7 @@ function StoreContent() {
                 </button>
               </div>
             </div>
+            </FadeInWhenVisible>
           ))}
         </div>
 

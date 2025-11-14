@@ -5,9 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 
 export default function Header() {
+    const { resolvedTheme } = useTheme();
+    const thingy = resolvedTheme === "dark" ? "{Turn on the lights?} ->" : "{Turn off the lights?} -> ";
     const [hoverCar, setHoverCar] = useState(false);
     return (
         <motion.nav
@@ -78,7 +81,9 @@ export default function Header() {
               </Link> */}
             </div>
             {/* <Navigation /> */}
-            <div className="flex flex-row gap-4 items-center">
+            <div className="flex flex-row items-center">
+              <p className="font-bricolage font-bold text-foreground/20 pr-0.5">{thingy}</p>
+              <div className="flex flex-row items-center gap-4">
               <ThemeSwitcher/>
               <Link
                 href="/store" 
@@ -92,6 +97,7 @@ export default function Header() {
               >
                 Contact
               </Link>
+              </div>
             </div>
           </div>
         </motion.nav>

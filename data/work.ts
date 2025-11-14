@@ -5,6 +5,7 @@ type WorkItem = {
   description?: string;
   logo?: string;
   screenshot?: string;
+  gallery?: string[];
   links?: { site?: string; repo?: string };
   tech?: string[];
   status?: string;
@@ -15,6 +16,15 @@ type WorkItem = {
 };
 
 export const works: WorkItem[] = [
+  {
+    slug: "contxt",
+    title: "Contxt",
+    description: "RAG as a service.",
+    links: { site: "https://contxt.v19.tech/" },
+    logo: "/logos/contxt.svg",
+    screenshot: "/screenshots/webp/contxt.webp",
+    status: "Currently Building..."
+  },
   {
     slug: "citadel",
     title: "Citadel",
