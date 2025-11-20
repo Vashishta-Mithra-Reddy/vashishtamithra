@@ -31,10 +31,10 @@ export function Slider() {
                 />
 
                 {/* Hover overlay with backdrop blur + centered description */}
-                {work.description && (
+                {work.summary && (
                   <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl bg-background/20 backdrop-blur-md pointer-events-none">
-                    <p className="px-5 py-2 text-center text-md font-bold text-white animate-in slide-in-from-bottom-10">
-                      {work.description}
+                    <p className="px-5 py-2 text-center text-md font-bold text-white group-hover:animate-in group-hover:slide-in-from-bottom transition-all duration-500">
+                      {work.summary}
                     </p>
                   </div>
                 )}
