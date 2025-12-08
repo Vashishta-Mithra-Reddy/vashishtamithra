@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = getWorkBySlug(slug);
   if (!item) return { title: "Work Not Found" };
-  const title = `V19 -> ${item.title}`;
+  const title = `${item.title} | ${item.summary} | ${item.description}`;
   const description = item.description || item.summary || "Work detail";
   return {
     title,
