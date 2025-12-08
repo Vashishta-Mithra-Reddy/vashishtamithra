@@ -13,13 +13,26 @@ type WorkItem = {
   highlights?: string[];
   roles?: string[];
   platform?: string;
+  type?: 'personal' | 'agency';
 };
 
 export const works: WorkItem[] = [
   {
+    slug: "socionova",
+    title: "Socionova",
+    summary: "SMM and Marketing Agency",
+    description: "Socionova is a SMM and marketing agency that helps businesses grow their online presence and reach new audiences. We provide a range of services, including social media management, content creation, and digital marketing.",
+    logo: "/logos/socionova.png", 
+    screenshot: "/screenshots/webp/socionova.webp", 
+    links: { site: "https://socionova.in/" },
+    type: "agency",
+    tech: ["Next.js"],
+    roles: ["Agency Lead"]
+  },
+  {
     slug: "contxt",
     title: "Contxt",
-    summary: "RAG as a service",
+    summary: "RAG as a service.",
     description: "Plug and play your knowledge bases, manage embeddings, and retrieve intelligence instantly. A powerful RAG-as-a-Service platform designed for developers to integrate AI context seamlessly.",
     links: { site: "https://contxt.v19.tech/" },
     logo: "/logos/contxt.svg",
@@ -28,17 +41,31 @@ export const works: WorkItem[] = [
     tech: ["Next.js", "Vector DB", "LLMs", "Drizzle ORM"],
     roles: ["Full Stack", "AI Engineer"]
   },
+  
+  {
+    slug: "ahara",
+    title: "Ahāra",
+    summary: "Food diary and trigger analysis platform.",
+    description: "Track how stuff affects you. A food diary and trigger analysis platform helping you discover patterns between your diet and your health/mood.",
+    logo: "/logos/ahara.svg",
+    screenshot: "/screenshots/webp/ahara.webp",
+    links: { site: "https://ahara.v19.tech/" },
+    status: "Currently Building...",
+    platform: "Native & Web",
+    tech: ["React Native", "Next.js", "TypeScript", "Expo", "Supabase", "Drizzle ORM"],
+    roles: ["Full Stack", "Mobile"]
+  },
   {
     slug: "citadel",
     title: "Citadel",
-    summary: "Secure password manager",
+    summary: "Password manager",
     description: "A secure, minimal password manager built with modern web crypto and a clean UI. Features zero-knowledge encryption to ensure your data remains truly yours.",
     logo: "/logos/citadel.png",
     screenshot: "/screenshots/webp/citadel.webp",
     links: { site: "https://citadel.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Web Crypto API", "Radix UI"],
-    status: "Active",
     date: "2024-08-01",
+    type: "agency",
     highlights: [
       "Zero-knowledge encryption",
       "Responsive UI with buttery micro-interactions",
@@ -49,13 +76,12 @@ export const works: WorkItem[] = [
   {
     slug: "hita",
     title: "Hita",
-    summary: "AI-powered wellness platform",
+    summary: "Wellness platform for a healthier you.",
     description: "AI-powered wellness platform to find clean, healthy products, remedies, and nutritional information. Powered by RAG and embeddings for accurate, context-aware answers to your health queries.",
     logo: "/logos/hita.png",
     screenshot: "/screenshots/webp/hita.webp",
     links: { site: "https://hita.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "RAG", "OpenAI API", "n8n", "PostgreSQL"],
-    status: "Active",
     date: "2024-06-10",
     highlights: [
       "Context-aware AI health assistant",
@@ -73,7 +99,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/saransha.webp",
     links: { site: "https://saransha.vercel.app/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Whisper API", "FFmpeg"],
-    status: "Active",
     date: "2024-07-01",
     highlights: ["Fast transcript rendering", "Concise AI summaries"],
     roles: ["Frontend", "AI Integration"]
@@ -87,7 +112,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/whykerala.webp",
     links: { site: "https://whykerala.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Google Maps API"],
-    status: "Active",
     date: "2023-11-01",
     highlights: ["Interactive route planning", "Immersive storytelling", "Cultural showcase"],
     roles: ["Design", "Frontend"]
@@ -101,8 +125,8 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/thebagavillage.webp",
     links: { site: "https://bagavillage.vercel.app/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "Shipped",
     date: "2023-08-15",
+    type: "agency",
     highlights: ["High-conversion landing page", "Property showcase", "Seamless booking flow"],
     roles: ["Frontend", "Designer"]
   },
@@ -115,7 +139,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/nidhi.webp",
     links: { site: "https://nidhi.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Web3", "Smart Contracts", "Solidity", "ThirdWeb"],
-    status: "Active",
     date: "2024-01-20",
     highlights: ["Smart contract integration", "Transparent fund tracking", "Token incentives"],
     roles: ["Frontend", "Web3 Integration"]
@@ -129,7 +152,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/vikraya.webp",
     links: { site: "https://vikraya.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Blockchain", "Solidity", "Ethers.js"],
-    status: "Active",
     date: "2024-02-14",
     highlights: ["Real-time bidding", "Farmer-centric UI", "Transparent ledger"],
     roles: ["Frontend", "Design"]
@@ -142,8 +164,8 @@ export const works: WorkItem[] = [
     logo: "/logos/lostescapes.jpg",
     screenshot: "/screenshots/webp/lostescapes.webp",
     links: { site: "https://lostescapes.com/" },
+    type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "Shipped",
     date: "2023-07-01",
     highlights: ["Luxury travel aesthetics", "Destination storytelling", "Conversion optimization"],
     roles: ["Frontend", "Designer"]
@@ -156,8 +178,8 @@ export const works: WorkItem[] = [
     logo: "/logos/rohtang_apiary.png",
     screenshot: "/screenshots/webp/rohtangapiary.webp",
     links: { site: "https://www.rohtangapiary.com/" },
+    type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "Shipped",
     date: "2023-05-20",
     highlights: ["Story-driven layout", "Product showcase", "Educational content"],
     roles: ["Frontend"]
@@ -171,7 +193,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/doppleganger.webp",
     links: { site: "https://xdoppleganger.vercel.app" },
     tech: ["Next.js", "TypeScript", "Socket.io", "Node.js", "Express", "Redis"],
-    status: "Prototype",
     date: "2022-12-18",
     highlights: ["Real-time chat", "Interest matching algorithm", "Global community"],
     roles: ["Frontend", "Backend"]
@@ -185,7 +206,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/infernia.webp",
     links: { site: "https://infernia.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    status: "Active",
     date: "2024-03-08",
     highlights: ["Personal data visualization", "Secure diary", "Gamified UI"],
     roles: ["Frontend"]
@@ -199,7 +219,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/ishta.webp",
     links: { site: "https://ishta.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "Active",
     date: "2024-04-11",
     highlights: ["Minimalist design", "Personal branding", "Dynamic layouts"],
     roles: ["Frontend", "Designer"]
@@ -212,8 +231,8 @@ export const works: WorkItem[] = [
     logo: "/logos/white_waters_v5.png",
     screenshot: "/screenshots/webp/whitewaters.webp",
     links: { site: "https://whitewaters.vercel.app" },
+    type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "Prototype",
     date: "2023-09-28",
     highlights: ["Adventure imagery", "Course booking system", "Interactive gallery"],
     roles: ["Frontend"]
@@ -227,7 +246,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/karyakramah.webp",
     links: { site: "https://karyakramah.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    status: "Active",
     date: "2024-05-21",
     highlights: ["Real-time availability", "Multi-vendor platform", "Advanced search"],
     roles: ["Frontend", "Designer", "Architecture"]
@@ -241,7 +259,6 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/kanri.webp",
     links: { site: "https://kanri.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    status: "Active",
     date: "2024-06-02",
     highlights: ["Admin dashboard", "Booking management", "Role-based security"],
     roles: ["Frontend", "System Design"]
@@ -271,19 +288,6 @@ export const works: WorkItem[] = [
     date: "2021-11-20",
     highlights: ["Hardware-software integration", "Real-time sensor data", "Cloud dashboard"],
     roles: ["Hardware", "Backend"]
-  },
-  {
-    slug: "ahara",
-    title: "Ahāra",
-    summary: "Food trigger analysis",
-    description: "Track how stuff affects you. A food diary and trigger analysis platform helping you discover patterns between your diet and your health/mood.",
-    logo: "/logos/ahara.svg",
-    screenshot: "/screenshots/webp/ahara.webp",
-    links: { site: "https://ahara.v19.tech/" },
-    status: "Currently Building...",
-    platform: "Native & Web",
-    tech: ["React Native", "Next.js", "TypeScript", "Expo", "Supabase", "Drizzle ORM"],
-    roles: ["Full Stack", "Mobile"]
   }
 ];
 

@@ -2,8 +2,19 @@ import Link from "next/link";
 import { InfiniteSlider } from "./ui/infinite-slider";
 import { getWorkList } from "@/data/work";
 
-export function Slider() {
-  const works = getWorkList();
+interface SliderProps {
+  filterType?: 'personal' | 'agency';
+}
+
+export function Slider({ filterType = 'personal' }: SliderProps) {
+  const allWorks = getWorkList();
+
+  const works = allWorks.filter((work) => {
+    if (filterType === 'agency') {
+      return work.type === 'agency';
+    }
+    return work.type !== 'agency';
+  });
 
   return (
     <InfiniteSlider speedOnHover={20} gap={32} className="rounded-xl">
@@ -59,3 +70,4 @@ export function Slider() {
     </InfiniteSlider>
   );
 }
+

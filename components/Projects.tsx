@@ -3,257 +3,169 @@ import Image from "next/image";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-
-const allProjects = [
-  { 
-    slug: "contxt",
-    title: "Contxt",
-    description: "RAG as a service.",
-    link: "https://contxt.v19.tech/",
-    logo: "/logos/contxt.svg",
-    screenshot: "/screenshots/webp/contxt.webp",
-    status: "Currently Building..."
-  },
-  { 
-    slug: "ahara",
-    title: "Ahāra",
-    description: "Food diary and trigger analysis platform.",
-    link: "https://ahara.v19.tech/",
-    logo: "/logos/ahara.svg",
-    screenshot: "/screenshots/webp/ahara.webp",
-    status: "Currently Building...",
-    platform: "Native & Web"
-  },
-  {
-    slug: "citadel",
-    title: "Citadel",
-    description: "Password manager",
-    link: "https://citadel.v19.tech/",
-    logo: "/logos/citadel.png",
-    screenshot: "/screenshots/webp/citadel.webp",
-  },
-  {
-    slug: "hita",
-    title: "Hita",
-    description: "Wellness platform for a healthier you.",
-    link: "https://hita.v19.tech",
-    logo: "/logos/hita.png",
-    screenshot: "/screenshots/webp/hita.webp",        
-  },
-  {
-    slug: "saransha",
-    title: "Saransha",
-    description: "Instagram reel transcriber",
-    link: "https://saransha.vercel.app/",
-    logo: "/logos/v19.png",
-    screenshot: "/screenshots/webp/saransha.webp",        
-  },
-  {
-    slug: "whykerala",
-    title: "Why Kerala?",
-    description: "Built to convince my friends about Kerala.",
-    link: "https://whykerala.v19.tech/",
-    logo: "/logos/whykerala.png",
-    screenshot: "/screenshots/webp/whykerala.webp",        
-  },
-  {
-    slug: "thebagavillage",
-    title: "The Baga Village",
-    description: "Hotel website for a Goa chain.",
-    link: "https://bagavillage.vercel.app/",
-    logo: "/logos/tbv.png",
-    screenshot: "/screenshots/webp/thebagavillage.webp",        
-  },
-  {
-    slug: "nidhi",
-    title: "Nidhi",
-    description: "Decentralized fundraising with rewards.",
-    link: "https://nidhi.v19.tech",
-    logo: "/logos/nidhi.png", 
-    screenshot: "/screenshots/webp/nidhi.webp",        
-  },
-  {
-    slug: "vikraya",
-    title: "Vikraya",
-    description: "Blockchain crop auction for farmers.",
-    link: "https://vikraya.v19.tech",
-    logo: "/logos/vikraya.png",
-    screenshot: "/screenshots/webp/vikraya.webp",        
-  },
-  
-  {
-    slug: "lostescapes",
-    title: "Lost Escapes",
-    description: "Boutique travel booking experience.",
-    link: "https://lostescapes.com/",
-    logo: "/logos/lostescapes.jpg",
-    screenshot: "/screenshots/webp/lostescapes.webp",        
-  },
-  {
-    slug: "rohtangapiary",
-    title: "Rohtang Apiary",
-    description: "For a bee farmer in the Himalayas.",
-    link: "https://www.rohtangapiary.com/",
-    logo: "/logos/rohtang_apiary.png",  
-    screenshot: "/screenshots/webp/rohtangapiary.webp",        
-  },
-  {
-    slug: "doppleganger",
-    title: "Doppleganger",
-    description: "Live interest-based chat matching.",
-    link: "https://xdoppleganger.vercel.app",
-    logo: "/logos/doppleganger.png",  
-    screenshot: "/screenshots/webp/doppleganger.webp",        
-  },
-  {
-    slug: "infernia",
-    title: "Infernia (Dragon's Realm)",
-    description: "Personal vault with diary and diet logs.",
-    link: "https://infernia.v19.tech",
-    logo: "/logos/infernia.png",  
-    screenshot: "/screenshots/webp/infernia.webp",        
-  },
-  { 
-    slug: "ishta",
-    title: "Ishta.",
-    description: "Personal identity showcase platform.",
-    link: "https://ishta.v19.tech",
-    logo: "/logos/ishta.png",  
-    screenshot: "/screenshots/webp/ishta.webp",        
-  },
-  {
-    slug: "whitewaters",
-    title: "White Waters",
-    description: "Adventure booking site.",
-    link: "https://whitewaters.vercel.app",
-    logo: "/logos/white_waters_v5.png",  
-    screenshot: "/screenshots/webp/whitewaters.webp",        
-  },
-  {
-    slug: "karyakramah",
-    title: "Kāryakramah",
-    description: "Venue and service provider booking SaaS.",
-    link: "https://karyakramah.v19.tech",
-    logo: "/logos/karyakramah.png",  
-    screenshot: "/screenshots/webp/karyakramah.webp",        
-  },
-  {
-    slug: "kanri",
-    title: "Kanri | Kāryakramah",
-    description: "Venue backend management dashboard.",
-    link: "https://kanri.v19.tech/",
-    logo: "/logos/karyakramah.png",  
-    screenshot: "/screenshots/webp/kanri.webp",        
-  },
-  { 
-    slug: "kaizen",
-    title: "Kaizen",
-    description: "Gamified Android fitness app.",
-    link: "https://www.vashishtamithra.com/",
-    logo: "/logos/kaizen.png",       
-  },
-  { 
-    slug: "krushi",
-    title: "Krushi",
-    description: "IoT-based soil and animal monitoring.",
-    link: "https://github.com/Vashishta-Mithra-Reddy/Agro_T",
-    logo: "/logos/krushi.png",        
-  },
-];
+import { getWorkList } from "@/data/work";
+import { ExternalLink } from "lucide-react";
 
 const thingy = ["Stuff ", "I ", "have ", "built."];
-// const thingy = "Stuff I have built.";
 
 export default function Projects() {
+  const allWorks = getWorkList();
+  // Filter out 'agency' type and 'Archive' status for personal projects
+  const personalProjects = allWorks.filter(
+    (w) => w.type !== "agency" && w.status !== "Archive"
+  );
+  // Filter only 'agency' type
+  const agencyProjects = allWorks.filter((w) => w.type === "agency");
+
   return (
     <section className="w-full min-h-screen text-foreground font-satoshi wrapperx">
       <div className="max-w-4xl mx-auto">
-        <h2
-          className="text-4xl font-bold mb-20 text-center text-foreground/60 flex items-center justify-center"
-        >
+        {/* Personal Projects Header */}
+        <h2 className="text-4xl font-bold mb-20 text-center text-foreground/60 flex items-center justify-center">
           {thingy.map((word, index) => (
             <motion.span
               key={index}
               className="inline-block mr-2"
               initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{duration:0.8, delay: index * 0.2, type: "decay" }}
+              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
             >
               {word}
             </motion.span>
           ))}
         </h2>
+
+        {/* Personal Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {allProjects.map((project, index) => (
-            <FadeInWhenVisible key={index}>
-            <Link
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-start gap-4 transition group border-2 border-foreground/10 border-dotted rounded-2xl p-6"
-            >
-              
-              {project.screenshot && (
-                <div className="relative w-full">
-                  {/* Blurred Background Screenshot */}
-                  <Image
-                    src={project.screenshot}
-                    alt={`${project.title} background`}
-                    width={460}
-                    height={200}
-                    className="absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.02] contrast-200 saturate-200 brightness-120 rounded-xl z-0"
-                    aria-hidden="true"
-                  />
-
-                  {/* Main Screenshot */}
-                  <Image
-                    src={project.screenshot}
-                    alt={project.title}
-                    width={460}
-                    height={200}
-                    className="relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2"
-                  />
-
-                  {project.status && (
-                    <div className="absolute bottom-5 left-2 z-20">
-                      <span className="px-2.5 py-1 text-xs rounded-full bg-white/10 text-white border-2 border-white/5 backdrop-blur-sm">
-                        {project.status}
-                      </span>
-                    </div>
-                  )}
-
-                  {project.platform && (
-                    <div className="absolute bottom-5 right-2 z-20">
-                      <span className="px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/30 text-white border-2 border-blue-500/30 backdrop-blur-sm">
-                        {project.platform}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              )}
-
-
-              <div className="flex gap-1 w-full py-2.5 rounded-2xl px-2 border-2 border-foreground/10 border-dotted">
-              <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-3.5">
-                <Image
-                  src={project.logo}
-                  alt={project.title}
-                  fill
-                  className="p-1 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                />
-              </div>
-              <div className="flex flex-col justify-center">
-                <h3 className="text-sm font-semibold text-foreground/90">{project.title}</h3>
-                <p className="text-sm text-foreground/60">{project.description}</p>
-              </div>
-              </div>
-            </Link>
-            </FadeInWhenVisible>
+          {personalProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+
+        {/* Agency Projects Section */}
+        {agencyProjects.length > 0 && (
+          <FadeInWhenVisible>
+            <div className="mt-32 mb-16 flex flex-col items-center justify-center gap-4">
+              <div className="flex items-center gap-4">
+                <h2 className="text-4xl font-bold text-center text-foreground/60">
+                  Agency Work
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {agencyProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </div>
+          </FadeInWhenVisible>
+        )}
       </div>
     </section>
+  );
+}
+
+function ProjectCard({ project }: { project: any }) {
+  // Determine the link to use for the image click: site > repo > placeholder link
+  const siteUrl = project.links?.site;
+  // The link for the bottom details section
+  const linkUrl = `/work/${project.slug}`;
+
+  return (
+    <FadeInWhenVisible>
+      {/* Removed overflow-hidden from the main card so the blur can bleed even more freely if needed */}
+      <div className="flex flex-col items-start gap-4 transition group border-2 border-foreground/10 border-dotted rounded-2xl p-6 h-full relative">
+        {project.screenshot && (
+          // FIX: Removed 'rounded-xl overflow-hidden' from this wrapper.
+          // This allows the blur image (which is scaled up) to bleed out into the padding.
+          <div className="relative w-full group/image">
+            <Link
+              href={siteUrl || linkUrl}
+              target={siteUrl ? "_blank" : "_self"}
+              className="block relative w-full"
+            >
+              {/* Blurred Background Screenshot */}
+              <Image
+                src={project.screenshot}
+                alt={`${project.title} background`}
+                width={460}
+                height={200}
+                className="absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.04] contrast-200 saturate-200 brightness-120 rounded-xl z-0"
+                aria-hidden="true"
+              />
+
+              {/* Main Screenshot */}
+              <Image
+                src={project.screenshot}
+                alt={project.title}
+                width={460}
+                height={200}
+                className="relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2"
+              />
+            </Link>
+
+            {/* Status Pill (Bottom Left) */}
+            {project.status && (
+              <div className="absolute bottom-5 left-2 z-20 pointer-events-none">
+                <span className="px-2.5 py-1 text-xs rounded-full bg-white/10 text-white border-2 border-white/5 backdrop-blur-sm">
+                  {project.status}
+                </span>
+              </div>
+            )}
+
+            {/* Platform Pill (Bottom Right - Slides Left on Hover) */}
+            {project.platform && (
+              <div
+                className={`absolute bottom-5 right-2 z-20 pointer-events-none transition-transform duration-500 ease-out ${
+                  siteUrl ? "group-hover/image:-translate-x-24" : ""
+                }`}
+              >
+                <span className="px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/30 text-white border-2 border-blue-500/30 backdrop-blur-sm transition-all duration-300">
+                  {project.platform}
+                </span>
+              </div>
+            )}
+
+            {/* Launch Button (Bottom Right - Fades In on Hover) */}
+            {siteUrl && (
+              <a
+                href={siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-2 z-30 opacity-0 translate-y-2 group-hover/image:translate-y-0 group-hover/image:opacity-100 transition-all duration-500 ease-out"
+              >
+                <button className="flex items-center gap-2 px-2.5 py-1 bg-white/90 dark:bg-black/80 text-foreground text-xs font-bold rounded-full shadow-lg backdrop-blur-md hover:bg-white dark:hover:bg-black transition-all duration-500 border-2 border-foreground/10 cursor-pointer">
+                  <ExternalLink size={14} />
+                  <span>Launch</span>
+                </button>
+              </a>
+            )}
+          </div>
+        )}
+
+        <Link
+          href={linkUrl}
+          className="flex gap-1 w-full py-2.5 rounded-2xl px-2 border-2 border-foreground/10 border-dotted mt-auto hover:bg-foreground/5 transition-colors"
+        >
+          {project.logo && (
+            <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-3.5 shrink-0">
+              <Image
+                src={project.logo}
+                alt={project.title}
+                fill
+                className="p-1 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
+          )}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-sm font-semibold text-foreground/90">
+              {project.title}
+            </h3>
+            <p className="text-sm text-foreground/60 line-clamp-2">
+              {project.summary}
+            </p>
+          </div>
+        </Link>
+      </div>
+    </FadeInWhenVisible>
   );
 }

@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = getWorkBySlug(slug);
   if (!item) return { title: "Work Not Found" };
-  const title = `${item.title} { v19 }`;
+  const title = `V19 -> ${item.title}`;
   const description = item.description || item.summary || "Work detail";
   return {
     title,
@@ -141,7 +141,7 @@ export default async function WorkPage({
                         src={src}
                         alt={`${item.title} screenshot ${idx + 1}`}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.01]"
                       />
                     </div>
                   ))}
@@ -283,7 +283,7 @@ export default async function WorkPage({
           <p className="text-foreground/60 mt-2">Explore other things I've built</p>
         </div>
         <div className="w-full">
-          <Slider />
+          <Slider filterType={item.type} />
         </div>
       </section>
     </main>
