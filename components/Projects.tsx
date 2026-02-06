@@ -65,10 +65,13 @@ export default function Projects() {
 }
 
 function ProjectCard({ project }: { project: any }) {
-  // Determine the link to use for the image click: site > repo > placeholder link
   const siteUrl = project.links?.site;
-  // The link for the bottom details section
   const linkUrl = `/work/${project.slug}`;
+  const logoItems = Array.isArray(project.logo)
+    ? project.logo.filter(Boolean)
+    : project.logo
+      ? [project.logo]
+      : [];
 
   return (
     <FadeInWhenVisible>
@@ -146,14 +149,28 @@ function ProjectCard({ project }: { project: any }) {
           href={linkUrl}
           className="flex gap-1 w-full py-2.5 rounded-2xl px-2 border-2 border-foreground/10 border-dotted mt-auto hover:bg-foreground/5 transition-colors"
         >
-          {project.logo && (
-            <div className="w-12 h-12 relative rounded-xl overflow-hidden bg-white mr-3.5 shrink-0">
-              <Image
-                src={project.logo}
-                alt={project.title}
-                fill
-                className="p-1 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-              />
+          {logoItems.length > 0 && (
+            <div className="flex items-center gap-2 mr-3.5 shrink-0">
+              {logoItems.map((logo: any, index: number) => {
+                const logoData = typeof logo === "string" ? { src: logo } : logo;
+                const fit = logoData?.fit ?? (logoItems.length > 1 ? "contain" : "cover");
+                const zoom = logoData?.zoom;
+                return (
+                <div
+                  key={`${project.slug}-logo-${index}`}
+                  className="w-12 h-12 relative rounded-xl overflow-hidden bg-white"
+                >
+                  <Image
+                    src={logoData?.src}
+                    alt={project.title}
+                    fill
+                    style={zoom ? { transform: `scale(${zoom})` } : undefined}
+                    className={`p-1 grayscale group-hover:grayscale-0 transition-all duration-500 ${
+                      fit === "contain" ? "object-contain" : "object-cover"
+                    } ${zoom ? "" : "group-hover:scale-105"}`}
+                  />
+                </div>
+              )})}
             </div>
           )}
           <div className="flex flex-col justify-center">

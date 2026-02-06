@@ -1,9 +1,15 @@
+type LogoConfig = {
+  src: string;
+  zoom?: number;
+  fit?: "contain" | "cover";
+};
+
 type WorkItem = {
   slug: string;
   title: string;
   summary?: string;
   description?: string;
-  logo?: string;
+  logo?: string | LogoConfig | Array<string | LogoConfig>;
   screenshot?: string;
   gallery?: string[];
   links?: { site?: string; repo?: string };
@@ -18,6 +24,26 @@ type WorkItem = {
 
 export const works: WorkItem[] = [
   {
+    slug: "hiresynq",
+    title: "HireSynQ",
+    summary: "Talent hiring and culture fit matching.",
+    description: "A simple, transparent hiring flow that connects companies and candidates with the right cultural and role alignment, from discovery to final hire.",
+    logo: "/logos/v19.png",
+    screenshot: "/screenshots/webp/hiresynq.webp",
+    links: { site: "https://hiresynq.vercel.app/" },
+    type: "agency"
+  },
+  {
+    slug: "rare-cocoa",
+    title: "Rare Cocoa",
+    summary: "Farm-to-bar chocolate brand.",
+    description: "A handcrafted, preservative-free chocolate brand from Vijayawada, focused on pure cocoa, authentic flavors, and premium gifting experiences.",
+    logo: "/logos/rarecocoa.png",
+    screenshot: "/screenshots/webp/rarecocoa.webp",
+    links: { site: "https://www.rarecocoa.in/" },
+    type: "agency"
+  },
+  {
     slug: "socionova",
     title: "Socionova",
     summary: "SMM and Marketing Agency",
@@ -30,6 +56,52 @@ export const works: WorkItem[] = [
     roles: ["Agency Lead"]
   },
   {
+    slug: "navi",
+    title: "Navi (Project Apotheosis)",
+    summary: "Built to manage my life",
+    platform: "Agentic System",
+    status: "Currently Building...",
+    description: "A focused personal system to track goals, journal entries, habits, and daily routines for continuous self-improvement.",
+    logo: { src: "/logos/navi.png", zoom: 1.2 },
+    screenshot: "/screenshots/webp/navi_ai_dark.webp",
+    links: { site: "https://navi.vashishtamithra.com/" }
+  },
+  {
+    slug: "sift",
+    title: "Sift (Active Recall Engine)",
+    summary: "Makes Learning Easy",
+    description: "Turn documents into precision-engineered quizzes with focused recall sessions and progress tracking that targets weak spots.",
+    logo: { src: "/logos/sift.png", zoom: 1.2 },
+    screenshot: "/screenshots/webp/sift_dark.webp",
+    links: { site: "https://sift.v19.tech/" }
+  },
+  {
+    slug: "karyakramah-au",
+    title: "Kāryakramah AU",
+    summary: "Campus events and venue bookings.",
+    description: "A central hub for Anurag University student activities, event discovery, and venue booking to connect the campus community.",
+    logo: "/logos/karyakramah.png",
+    screenshot: "/screenshots/webp/au.webp",
+    links: { site: "https://au.karyakramah.com/" }
+  },
+  {
+    slug: "hita",
+    title: "Hita",
+    summary: "Wellness platform for a healthier you.",
+    description: "AI-powered wellness platform to find clean, healthy products, remedies, and nutritional information. Powered by RAG and embeddings for accurate, context-aware answers to your health queries.",
+    logo: "/logos/hita.png",
+    screenshot: "/screenshots/webp/hita.webp",
+    links: { site: "https://hita.v19.tech" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "RAG", "OpenAI API", "n8n", "PostgreSQL"],
+    date: "2024-06-10",
+    highlights: [
+      "Context-aware AI health assistant",
+      "Verified product database",
+      "Holistic wellness remedies"
+    ],
+    roles: ["Product", "Frontend", "AI Integration"]
+  },
+  {
     slug: "contxt",
     title: "Contxt",
     summary: "RAG as a service.",
@@ -37,11 +109,10 @@ export const works: WorkItem[] = [
     links: { site: "https://contxt.v19.tech/" },
     logo: "/logos/contxt.svg",
     screenshot: "/screenshots/webp/contxt.webp",
-    status: "Currently Building...",
+    // status: "Currently Building...",
     tech: ["Next.js", "Vector DB", "LLMs", "Drizzle ORM"],
     roles: ["Full Stack", "AI Engineer"]
   },
-  
   {
     slug: "ahara",
     title: "Ahāra",
@@ -50,7 +121,7 @@ export const works: WorkItem[] = [
     logo: "/logos/ahara.svg",
     screenshot: "/screenshots/webp/ahara.webp",
     links: { site: "https://ahara.v19.tech/" },
-    status: "Currently Building...",
+    status: "Still in build...",
     platform: "Native & Web",
     tech: ["React Native", "Next.js", "TypeScript", "Expo", "Supabase", "Drizzle ORM"],
     roles: ["Full Stack", "Mobile"]
@@ -74,23 +145,6 @@ export const works: WorkItem[] = [
     roles: ["Design", "Frontend", "Backend"]
   },
   {
-    slug: "hita",
-    title: "Hita",
-    summary: "Wellness platform for a healthier you.",
-    description: "AI-powered wellness platform to find clean, healthy products, remedies, and nutritional information. Powered by RAG and embeddings for accurate, context-aware answers to your health queries.",
-    logo: "/logos/hita.png",
-    screenshot: "/screenshots/webp/hita.webp",
-    links: { site: "https://hita.v19.tech" },
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "RAG", "OpenAI API", "n8n", "PostgreSQL"],
-    date: "2024-06-10",
-    highlights: [
-      "Context-aware AI health assistant",
-      "Verified product database",
-      "Holistic wellness remedies"
-    ],
-    roles: ["Product", "Frontend", "AI Integration"]
-  },
-  {
     slug: "saransha",
     title: "Saransha",
     summary: "Social content insights",
@@ -106,7 +160,7 @@ export const works: WorkItem[] = [
   {
     slug: "why-kerala",
     title: "Why Kerala?",
-    summary: "Interactive trip planner",
+    summary: "Built to convince my friends.",
     description: "An interactive trip planner designed to convince friends to visit Kerala. Showcases destinations, routes, food, and culture in an engaging, scrollable format.",
     logo: "/logos/whykerala.png",
     screenshot: "/screenshots/webp/whykerala.webp",
@@ -184,19 +238,19 @@ export const works: WorkItem[] = [
     highlights: ["Story-driven layout", "Product showcase", "Educational content"],
     roles: ["Frontend"]
   },
-  {
-    slug: "doppleganger",
-    title: "Doppleganger",
-    summary: "Interest-based matching",
-    description: "Find Your Doppelgänger! Connect with people who share your passions, interests, and quirks. Real-time chat matching based on shared interests.",
-    logo: "/logos/doppleganger.png",
-    screenshot: "/screenshots/webp/doppleganger.webp",
-    links: { site: "https://xdoppleganger.vercel.app" },
-    tech: ["Next.js", "TypeScript", "Socket.io", "Node.js", "Express", "Redis"],
-    date: "2022-12-18",
-    highlights: ["Real-time chat", "Interest matching algorithm", "Global community"],
-    roles: ["Frontend", "Backend"]
-  },
+  // {
+  //   slug: "doppleganger",
+  //   title: "Doppleganger",
+  //   summary: "Interest-based matching",
+  //   description: "Find Your Doppelgänger! Connect with people who share your passions, interests, and quirks. Real-time chat matching based on shared interests.",
+  //   logo: "/logos/doppleganger.png",
+  //   screenshot: "/screenshots/webp/doppleganger.webp",
+  //   links: { site: "https://xdoppleganger.vercel.app" },
+  //   tech: ["Next.js", "TypeScript", "Socket.io", "Node.js", "Express", "Redis"],
+  //   date: "2022-12-18",
+  //   highlights: ["Real-time chat", "Interest matching algorithm", "Global community"],
+  //   roles: ["Frontend", "Backend"]
+  // },
   {
     slug: "infernia",
     title: "Infernia",

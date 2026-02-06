@@ -84,10 +84,43 @@ export default async function WorkPage({
                 {item.logo && (
                   <div className="relative w-16 h-16 lg:w-24 lg:h-24 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border-2 border-border border-dotted">
                     <Image
-                      src={item.logo}
+                      src={
+                        Array.isArray(item.logo)
+                          ? typeof item.logo[0] === "string"
+                            ? item.logo[0]
+                            : item.logo[0]?.src
+                          : typeof item.logo === "string"
+                            ? item.logo
+                            : item.logo?.src
+                      }
                       alt={`${item.title} logo`}
                       fill
-                      className="object-contain p-3 rounded-2xl"
+                      style={
+                        Array.isArray(item.logo)
+                          ? typeof item.logo[0] === "string"
+                            ? undefined
+                            : item.logo[0]?.zoom
+                              ? { transform: `scale(${item.logo[0]?.zoom})` }
+                              : undefined
+                          : typeof item.logo === "string"
+                            ? undefined
+                            : item.logo?.zoom
+                              ? { transform: `scale(${item.logo?.zoom})` }
+                              : undefined
+                      }
+                      className={`p-3 rounded-2xl ${
+                        Array.isArray(item.logo)
+                          ? typeof item.logo[0] === "string"
+                            ? "object-contain"
+                            : item.logo[0]?.fit === "cover"
+                              ? "object-cover"
+                              : "object-contain"
+                          : typeof item.logo === "string"
+                            ? "object-contain"
+                            : item.logo?.fit === "cover"
+                              ? "object-cover"
+                              : "object-contain"
+                      }`}
                     />
                   </div>
                 )}
