@@ -2,12 +2,9 @@
 import Image from "next/image";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { getWorkList } from "@/data/work";
 import { ExternalLink } from "lucide-react";
-
-const thingy = ["Stuff ", "I ", "have ", "built."];
-const thingyx = ["Agency", "Work"]
+import AnimatedHeading from "./AnimatedHeading";
 
 export default function Projects() {
   const allWorks = getWorkList();
@@ -19,54 +16,23 @@ export default function Projects() {
   const agencyProjects = allWorks.filter((w) => w.type === "agency");
 
   return (
-    <section className="w-full text-foreground font-satoshi pt-8 pb-12 md:pt-12 md:pb-20">
+    <section className="w-full text-foreground font-satoshi pt-8 pb-12 md:pt-0 md:pb-20">
       <div className="max-w-5xl mx-auto">
         {/* Personal Projects Header */}
-        <h2 className="text-4xl font-bold mb-20 text-center text-foreground/60 flex items-center justify-center">
-          {thingy.map((word, index) => (
-            <motion.span
-              key={index}
-              className="inline-block mr-2"
-              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </h2>
+        <AnimatedHeading text="Stuff I have built." />
 
         {/* Personal Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8">
           {personalProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
 
         {/* Agency Projects Section */}
-        <motion.h2
-          className="text-4xl font-bold mb-20 pt-12 text-center text-foreground/60 flex items-center justify-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.6 }}
-        >
-          {thingyx.map((word, index) => (
-            <motion.span
-              key={index}
-              className="inline-block mr-2"
-              variants={{
-                hidden: { opacity: 0, y: 10, filter: "blur(5px)" },
-                visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-              }}
-              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.h2>
+        <AnimatedHeading text="Agency Work" />
 
         {agencyProjects.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8">
               {agencyProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}

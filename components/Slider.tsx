@@ -17,7 +17,7 @@ export function Slider({ filterType = 'personal' }: SliderProps) {
   });
 
   return (
-    <InfiniteSlider speedOnHover={20} gap={32} className="rounded-xl">
+    <InfiniteSlider speedOnHover={20} gap={32} className="rounded-none">
       {works.map((work) => {
         if (work.screenshot) {
           return (
@@ -62,7 +62,7 @@ export function Slider({ filterType = 'personal' }: SliderProps) {
 
                 {/* Hover overlay with backdrop blur + centered description */}
                 {work.summary && (
-                  <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl bg-background/20 backdrop-blur-md pointer-events-none">
+                  <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl bg-black/40 dark:bg-black/20 backdrop-blur-md pointer-events-none">
                     <p className="px-5 py-2 text-center text-md font-bold text-white group-hover:animate-in group-hover:slide-in-from-bottom transition-all duration-500">
                       {work.summary}
                     </p>
@@ -71,12 +71,12 @@ export function Slider({ filterType = 'personal' }: SliderProps) {
 
                 {/* Overlay badges (fade out on hover for clarity) */}
                 {work.title && (
-                  <span className="absolute bottom-3 left-3 z-20 px-2.5 py-1 text-xs rounded-full bg-white/10 text-white border-2 border-white/5 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0">
+                  <span className="absolute bottom-3 left-3 z-20 px-2.5 py-1 text-xs rounded-full bg-white/5 dark:bg-foreground/10 text-foreground border-2 border-foreground/5 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0">
                     {work.title}
                   </span>
                 )}
                 {work.platform && (
-                  <span className="absolute bottom-3 right-3 z-20 px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/30 text-white border-2 border-blue-500/30 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0">
+                  <span className="absolute bottom-3 right-3 z-20 px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-300/90 dark:bg-blue-500/30 text-white border-2 border-blue-500/20 dark:border-blue-500/30 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0">
                     {work.platform}
                   </span>
                 )}

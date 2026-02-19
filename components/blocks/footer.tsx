@@ -2,9 +2,11 @@
 import Link  from "next/link";
 import Image from "next/image";
 import Beams from "../Beams";
+import { usePathname } from "next/navigation";
 
 
 export default function Footer() {
+  const pathname = usePathname();
   const email = "me@vashishtamithra.com";
   const x = "{}";
   const y = "{/**/}";
@@ -15,6 +17,8 @@ export default function Footer() {
     { name: "Instagram", url: "https://instagram.com/vashishta_mithra_reddy", icon: "/socials/instagram.svg" },
     { name: "Ishta", url: "https://ishta.v19.tech/vashishta", icon: "/socials/ishta.svg" },
   ];
+
+  if (pathname.startsWith("/work/")) return null;
 
   return (
     <footer className="w-full mb-12 md:mb-0">

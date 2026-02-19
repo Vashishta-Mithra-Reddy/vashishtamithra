@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
 import ContributionGraph from "./contribution-graph";
+import AnimatedHeading from "./AnimatedHeading";
 
 const SKILLS_1 = [
   "Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js",
@@ -16,14 +17,14 @@ const SKILLS = [...SKILLS_1,...SKILLS_2]
 
 const EXPERIENCES = [
   {
-    role: "Founding Engineer (MVP Developer)",
+    role: "Founding Engineer",
     company: "LiteThink AI",
-    period: "Oct 2025 — Jan 2025",
+    period: "Oct 2025 — Jan 2026",
     location: "Hybrid",
     description: [
-      "Led end-to-end development of SPM (Super Product Manager), an AI-powered product management assistant, building the MVP from scratch.",
+      "Led end-to-end development of SPM (Super Product Manager), an AI-powered product management assistant, building the product from scratch.",
       "Architected and shipped a Chrome Extension and a web app for real-time product management workflows.",
-      "Built scalable frontends using React.js and Next.js with a strong focus on performance and UX.",
+      "Built scalable frontends using React.js with a strong focus on performance and UX.",
       "Designed backend systems using Firebase and Supabase, including third-party OAuth integrations.",
       "Integrated OpenAI APIs to enable AI-driven product insights, requirement analysis, and task generation.",
       "Owned system design, technical direction, and rapid MVP iteration from concept to delivery."
@@ -31,7 +32,7 @@ const EXPERIENCES = [
     tech: ["Next.js", "React", "Firebase", "Supabase", "OpenAI", "OAuth"]
   },
   {
-    role: "Full Stack Developer Intern",
+    role: "Full Stack Developer",
     company: "Persist Ventures",
     period: "Mar 2025 — May 2025",
     location: "Remote",
@@ -47,7 +48,7 @@ const EXPERIENCES = [
 
 export default function Me() {
   return (
-    <section className="w-full pb-12 lg:pb-16 overflow-hidden relative wrapperx">
+    <section className="w-full pb-0 overflow-hidden relative wrapperx">
       {/* Background Gradients */}
       {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] -z-10" /> */}
@@ -56,7 +57,7 @@ export default function Me() {
         <div className="flex flex-col items-center text-center space-y-12">
 
           {/* About Me */}
-          <div className="w-full max-w-5xl pt-12 text-left space-y-6 px-8">
+          <div className="w-full max-w-5xl text-left space-y-6 px-8 pt-16">
             {/* <FadeInWhenVisible>
               <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
                 About Me
@@ -105,12 +106,10 @@ export default function Me() {
           </FadeInWhenVisible> */}
 
           {/* Experience */}
-          <div className="w-full max-w-5xl pt-6 space-y-8 px-8">
+          <div className="w-full max-w-5xl space-y-8 px-8">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4">
-                <h2 className="text-3xl lg:text-3xl font-bold font-satoshi text-foreground/85">
-                  Experience
-                </h2>
+                <AnimatedHeading text="Experience" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
               </div>
             </FadeInWhenVisible>
 
@@ -161,9 +160,7 @@ export default function Me() {
           <div className="w-full pt-12 space-y-8 max-w-5xl px-8">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
-                <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
-                  Skills? (I mostly work with;)
-                </h2>
+                <AnimatedHeading text="Skills? (I mostly work with;)" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
                 {/* <div className="w-20 h-1.5 bg-foreground/10 rounded-full" /> */}
               </div>
             </FadeInWhenVisible>
@@ -182,12 +179,10 @@ export default function Me() {
             </FadeInWhenVisible>
           </div>
 
-          <div className="pt-12 space-y-8 w-fit">
+          <div className="space-y-8 w-fit pt-12">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
-                <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
-                  Activity
-                </h2>
+                <AnimatedHeading text="Activity" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
               </div>
             </FadeInWhenVisible>
 

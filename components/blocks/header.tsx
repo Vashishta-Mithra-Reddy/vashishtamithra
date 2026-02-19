@@ -6,15 +6,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 
 export default function Header() {
     const { resolvedTheme } = useTheme();
+    const pathname = usePathname();
+    const isWorkPage = pathname.startsWith("/work/");
     const thingy = resolvedTheme === "dark" ? "{Turn on the lights?} ->" : "{Turn off the lights?} -> ";
     const [hoverCar, setHoverCar] = useState(false);
     return (
         <motion.nav
-          className="w-full max-w-6xl flex justify-center h-20 backdrop-blur-3xl fixed top-0 md:top-8 left-1/2 transform -translate-x-1/2 rounded-none md:rounded-xl px-6 md:px-4 z-40"
+          className={`w-full ${isWorkPage ? "max-w-7xl" : "max-w-6xl"} flex justify-center h-20 backdrop-blur-3xl fixed top-0 md:top-8 left-1/2 transform -translate-x-1/2 rounded-none md:rounded-xl px-6 md:px-4 z-40 transition-all duration-500`}
           initial={{ opacity: 0, y: -10, filter: "blur(5px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ type: "spring", stiffness: 60, damping: 10, bounce: 0.45, visualDuration: 4 }}

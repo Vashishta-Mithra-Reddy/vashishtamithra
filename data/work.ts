@@ -101,7 +101,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/hita_dark.webp",
     links: { site: "https://hita.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "RAG", "OpenAI API", "n8n", "PostgreSQL"],
-    date: "2024-06-10",
+    date: "2025-06-10",
     highlights: [
       "Context-aware AI health assistant",
       "Verified product database",
@@ -146,7 +146,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/citadel_dark.webp",
     links: { site: "https://citadel.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Web Crypto API", "Radix UI"],
-    date: "2024-08-01",
+    date: "2025-08-01",
     type: "agency",
     highlights: [
       "Zero-knowledge encryption",
@@ -165,7 +165,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/saransha_dark.webp",
     links: { site: "https://saransha.vercel.app/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Whisper API", "FFmpeg"],
-    date: "2024-07-01",
+    date: "2025-07-01",
     highlights: ["Fast transcript rendering", "Concise AI summaries"],
     roles: ["Frontend", "AI Integration"]
   },
@@ -205,7 +205,7 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/nidhi.webp",
     links: { site: "https://nidhi.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Web3", "Smart Contracts", "Solidity", "ThirdWeb"],
-    date: "2024-01-20",
+    date: "2025-01-20",
     highlights: ["Smart contract integration", "Transparent fund tracking", "Token incentives"],
     roles: ["Frontend", "Web3 Integration"]
   },
@@ -218,7 +218,7 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/vikraya.webp",
     links: { site: "https://vikraya.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Blockchain", "Solidity", "Ethers.js"],
-    date: "2024-02-14",
+    date: "2025-02-14",
     highlights: ["Real-time bidding", "Farmer-centric UI", "Transparent ledger"],
     roles: ["Frontend", "Design"]
   },
@@ -273,7 +273,7 @@ export const works: WorkItem[] = [
     screenshot: "/screenshots/webp/infernia.webp",
     links: { site: "https://infernia.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    date: "2024-03-08",
+    date: "2025-03-08",
     highlights: ["Personal data visualization", "Secure diary", "Gamified UI"],
     roles: ["Frontend"]
   },
@@ -287,7 +287,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/ishta_dark.webp",
     links: { site: "https://ishta.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    date: "2024-04-11",
+    date: "2025-04-11",
     highlights: ["Minimalist design", "Personal branding", "Dynamic layouts"],
     roles: ["Frontend", "Designer"]
   },
@@ -316,7 +316,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/karyakramah_dark.webp",
     links: { site: "https://karyakramah.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    date: "2024-05-21",
+    date: "2025-05-21",
     highlights: ["Real-time availability", "Multi-vendor platform", "Advanced search"],
     roles: ["Frontend", "Designer", "Architecture"]
   },
@@ -330,7 +330,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/kanri_dark.webp",
     links: { site: "https://kanri.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    date: "2024-06-02",
+    date: "2025-06-02",
     highlights: ["Admin dashboard", "Booking management", "Role-based security"],
     roles: ["Frontend", "System Design"]
   },
