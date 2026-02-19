@@ -13,8 +13,8 @@ export default function Home() {
         Vashishta Mithra Reddy | V19
       </h1>
     </div> */}
-    <Projects/>
     <Me/>
+    <Projects/>
     {/* </LoadingAnimation> */}
     </>
   );

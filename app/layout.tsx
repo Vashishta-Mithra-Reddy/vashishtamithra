@@ -13,8 +13,10 @@ import Header from "@/components/blocks/header";
 import BottomNav from "@/components/blocks/bottom-nav";
 import BottomGradient from "@/components/BottomGradient";
 import ConsoleBrand from "@/components/ConsoleBrand";
+import { TooltipProvider } from "@/components/ui/tooltip";
 // import GlobalBackground from "@/components/GlobalBackground";
 import PWA from "@/components/PWA";
+import { ProgressiveBlur } from "@/components/ui/skiper-ui/skiper41";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -84,16 +86,29 @@ export default function RootLayout({
           enableSystem
         >
           {/* Console brand logs */}
+
           <ConsoleBrand />
           <PWA />
           {/* <GlobalBackground /> */}
+
+          
           <Header />
           <div>
+            <TooltipProvider>
             {children}
+            </TooltipProvider>
             <Analytics />
           </div>
+
+          <ProgressiveBlur
+            height="80px"
+            position="bottom"
+            blurAmount="14px"
+            className="fixed bottom-0 left-0 right-0 z-30"
+          />
+          
           <Toaster position="bottom-center" />
-          <BottomGradient/>
+          {/* <BottomGradient/> */}
           <BottomNav/>
           <Footer />
         </ThemeProvider>

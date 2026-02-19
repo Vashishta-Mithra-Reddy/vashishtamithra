@@ -47,11 +47,8 @@ export default async function WorkPage({
   if (!item) return notFound();
 
   // Use gallery if provided; fallback to single screenshot
-  const gallery = item.gallery?.length
-    ? item.gallery
-    : item.screenshot
-      ? [item.screenshot]
-      : [];
+  const gallery = item.gallery || [];
+  const showMainScreenshot = !gallery.length && item.screenshot;
 
   return (
     <main className="min-h-screen bg-background text-foreground font-satoshi selection:bg-foreground/10">
@@ -64,7 +61,16 @@ export default async function WorkPage({
               src={item.screenshot}
               alt="Background"
               fill
-              className="object-cover opacity-20 blur-3xl scale-110"
+              className={`object-cover opacity-20 blur-3xl scale-110 ${item.screenshotDark ? "dark:hidden" : ""}`}
+              priority
+            />
+          )}
+          {item.screenshotDark && (
+            <Image
+              src={item.screenshotDark}
+              alt="Dark Background"
+              fill
+              className="object-cover opacity-20 blur-3xl scale-110 hidden dark:block"
               priority
             />
           )}
@@ -157,7 +163,7 @@ export default async function WorkPage({
           </FadeInWhenVisible>
 
           {/* Gallery */}
-          {gallery.length > 0 && (
+          {(gallery.length > 0 || showMainScreenshot) && (
             <FadeInWhenVisible>
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold font-jakarta mb-6 flex items-center gap-2">
@@ -178,6 +184,26 @@ export default async function WorkPage({
                       />
                     </div>
                   ))}
+                  {showMainScreenshot && (
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-foreground/10 shadow-2xl bg-foreground/5 group">
+                      {item.screenshot && (
+                        <Image
+                          src={item.screenshot}
+                          alt={`${item.title} screenshot`}
+                          fill
+                          className={`object-cover transition-transform duration-700 group-hover:scale-[1.01] ${item.screenshotDark ? "dark:hidden" : ""}`}
+                        />
+                      )}
+                      {item.screenshotDark && (
+                        <Image
+                          src={item.screenshotDark}
+                          alt={`${item.title} screenshot dark`}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-[1.01] hidden dark:block"
+                        />
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </FadeInWhenVisible>

@@ -11,6 +11,7 @@ type WorkItem = {
   description?: string;
   logo?: string | LogoConfig | Array<string | LogoConfig>;
   screenshot?: string;
+  screenshotDark?: string;
   gallery?: string[];
   links?: { site?: string; repo?: string };
   tech?: string[];
@@ -29,7 +30,8 @@ export const works: WorkItem[] = [
     summary: "Talent hiring and culture fit matching.",
     description: "A simple, transparent hiring flow that connects companies and candidates with the right cultural and role alignment, from discovery to final hire.",
     logo: "/logos/v19.png",
-    screenshot: "/screenshots/webp/hiresynq.webp",
+    screenshot: "/screenshots/webp/hiresynq_light.webp",
+    screenshotDark: "/screenshots/webp/hiresynq_dark.webp",
     links: { site: "https://hiresynq.vercel.app/" },
     type: "agency"
   },
@@ -39,7 +41,8 @@ export const works: WorkItem[] = [
     summary: "Farm-to-bar chocolate brand.",
     description: "A handcrafted, preservative-free chocolate brand from Vijayawada, focused on pure cocoa, authentic flavors, and premium gifting experiences.",
     logo: "/logos/rarecocoa.png",
-    screenshot: "/screenshots/webp/rarecocoa.webp",
+    screenshot: "/screenshots/webp/rarecocoa_light.webp",
+    screenshotDark: "/screenshots/webp/rarecocoa_dark.webp",
     links: { site: "https://www.rarecocoa.in/" },
     type: "agency"
   },
@@ -49,7 +52,8 @@ export const works: WorkItem[] = [
     summary: "SMM and Marketing Agency",
     description: "Socionova is a SMM and marketing agency that helps businesses grow their online presence and reach new audiences. We provide a range of services, including social media management, content creation, and digital marketing.",
     logo: "/logos/socionova.png", 
-    screenshot: "/screenshots/webp/socionova.webp", 
+    screenshot: "/screenshots/webp/socionova_light.webp", 
+    screenshotDark: "/screenshots/webp/socionova_dark.webp", 
     links: { site: "https://socionova.in/" },
     type: "agency",
     tech: ["Next.js"],
@@ -63,7 +67,8 @@ export const works: WorkItem[] = [
     status: "Currently Building...",
     description: "A focused personal system to track goals, journal entries, habits, and daily routines for continuous self-improvement.",
     logo: { src: "/logos/navi.png", zoom: 1.2 },
-    screenshot: "/screenshots/webp/navi_ai_dark.webp",
+    screenshot: "/screenshots/webp/navi_ai_light.webp",
+    screenshotDark: "/screenshots/webp/navi_ai_dark.webp",
     links: { site: "https://navi.vashishtamithra.com/" }
   },
   {
@@ -72,7 +77,8 @@ export const works: WorkItem[] = [
     summary: "Makes Learning Easy",
     description: "Turn documents into precision-engineered quizzes with focused recall sessions and progress tracking that targets weak spots.",
     logo: { src: "/logos/sift.png", zoom: 1.2 },
-    screenshot: "/screenshots/webp/sift_dark.webp",
+    screenshot: "/screenshots/webp/sift_light.webp",
+    screenshotDark: "/screenshots/webp/sift_dark.webp",
     links: { site: "https://sift.v19.tech/" }
   },
   {
@@ -81,7 +87,8 @@ export const works: WorkItem[] = [
     summary: "Campus events and venue bookings.",
     description: "A central hub for Anurag University student activities, event discovery, and venue booking to connect the campus community.",
     logo: "/logos/karyakramah.png",
-    screenshot: "/screenshots/webp/au.webp",
+    screenshot: "/screenshots/webp/au_light.webp",
+    screenshotDark: "/screenshots/webp/au_dark.webp",
     links: { site: "https://au.karyakramah.com/" }
   },
   {
@@ -90,7 +97,8 @@ export const works: WorkItem[] = [
     summary: "Wellness platform for a healthier you.",
     description: "AI-powered wellness platform to find clean, healthy products, remedies, and nutritional information. Powered by RAG and embeddings for accurate, context-aware answers to your health queries.",
     logo: "/logos/hita.png",
-    screenshot: "/screenshots/webp/hita.webp",
+    screenshot: "/screenshots/webp/hita_light.webp",
+    screenshotDark: "/screenshots/webp/hita_dark.webp",
     links: { site: "https://hita.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "RAG", "OpenAI API", "n8n", "PostgreSQL"],
     date: "2024-06-10",
@@ -108,7 +116,8 @@ export const works: WorkItem[] = [
     description: "Plug and play your knowledge bases, manage embeddings, and retrieve intelligence instantly. A powerful RAG-as-a-Service platform designed for developers to integrate AI context seamlessly.",
     links: { site: "https://contxt.v19.tech/" },
     logo: "/logos/contxt.svg",
-    screenshot: "/screenshots/webp/contxt.webp",
+    screenshot: "/screenshots/webp/contxt_light.webp",
+    screenshotDark: "/screenshots/webp/contxt_dark.webp",
     // status: "Currently Building...",
     tech: ["Next.js", "Vector DB", "LLMs", "Drizzle ORM"],
     roles: ["Full Stack", "AI Engineer"]
@@ -119,7 +128,8 @@ export const works: WorkItem[] = [
     summary: "Food diary and trigger analysis platform.",
     description: "Track how stuff affects you. A food diary and trigger analysis platform helping you discover patterns between your diet and your health/mood.",
     logo: "/logos/ahara.svg",
-    screenshot: "/screenshots/webp/ahara.webp",
+    screenshot: "/screenshots/webp/ahara_light.webp",
+    screenshotDark: "/screenshots/webp/ahara_dark.webp",
     links: { site: "https://ahara.v19.tech/" },
     status: "Still in build...",
     platform: "Native & Web",
@@ -132,7 +142,8 @@ export const works: WorkItem[] = [
     summary: "Password manager",
     description: "A secure, minimal password manager built with modern web crypto and a clean UI. Features zero-knowledge encryption to ensure your data remains truly yours.",
     logo: "/logos/citadel.png",
-    screenshot: "/screenshots/webp/citadel.webp",
+    screenshot: "/screenshots/webp/citadel_light.webp",
+    screenshotDark: "/screenshots/webp/citadel_dark.webp",
     links: { site: "https://citadel.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Web Crypto API", "Radix UI"],
     date: "2024-08-01",
@@ -150,7 +161,8 @@ export const works: WorkItem[] = [
     summary: "Social content insights",
     description: "Extract insights from social content. Transcribes reels and provides clean summaries for quick consumption, helping you get the gist without the scroll.",
     logo: "/logos/v19.png",
-    screenshot: "/screenshots/webp/saransha.webp",
+    screenshot: "/screenshots/webp/saransha_light.webp",
+    screenshotDark: "/screenshots/webp/saransha_dark.webp",
     links: { site: "https://saransha.vercel.app/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Whisper API", "FFmpeg"],
     date: "2024-07-01",
@@ -216,7 +228,8 @@ export const works: WorkItem[] = [
     summary: "Boutique travel booking",
     description: "Boutique Experiential Getaways. Discover unique experiences, exclusive destinations, and sustainable travel options with a high-end visual design.",
     logo: "/logos/lostescapes.jpg",
-    screenshot: "/screenshots/webp/lostescapes.webp",
+    screenshot: "/screenshots/webp/lostescapes_light.webp",
+    screenshotDark: "/screenshots/webp/lostescapes_dark.webp",
     links: { site: "https://lostescapes.com/" },
     type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -270,7 +283,8 @@ export const works: WorkItem[] = [
     summary: "Personal identity showcase",
     description: "All About You & Your Favourite Things. A platform to share your whole vibe, favorites, and express yourself with elegant typography and minimal layouts.",
     logo: "/logos/ishta.png",
-    screenshot: "/screenshots/webp/ishta.webp",
+    screenshot: "/screenshots/webp/ishta_light.webp",
+    screenshotDark: "/screenshots/webp/ishta_dark.webp",
     links: { site: "https://ishta.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     date: "2024-04-11",
@@ -283,7 +297,8 @@ export const works: WorkItem[] = [
     summary: "Adventure sports booking",
     description: "Experience the thrill of kayaking, rafting, and mountain expeditions. A booking platform for adventure sports with bold visuals and comprehensive course details.",
     logo: "/logos/white_waters_v5.png",
-    screenshot: "/screenshots/webp/whitewaters.webp",
+    screenshot: "/screenshots/webp/whitewaters_light.webp",
+    screenshotDark: "/screenshots/webp/whitewaters_dark.webp",
     links: { site: "https://whitewaters.vercel.app" },
     type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -297,7 +312,8 @@ export const works: WorkItem[] = [
     summary: "Venue booking SaaS",
     description: "Find and Book Perfect Venues. A comprehensive SaaS for venue discovery and booking, featuring real-time availability and extensive directories.",
     logo: "/logos/karyakramah.png",
-    screenshot: "/screenshots/webp/karyakramah.webp",
+    screenshot: "/screenshots/webp/karyakramah_light.webp",
+    screenshotDark: "/screenshots/webp/karyakramah_dark.webp",
     links: { site: "https://karyakramah.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2024-05-21",
@@ -310,7 +326,8 @@ export const works: WorkItem[] = [
     summary: "Venue management admin",
     description: "The powerful backend for Kāryakramah. Helps venue owners manage venues, update availability, and handle bookings with role-based access control.",
     logo: "/logos/karyakramah.png",
-    screenshot: "/screenshots/webp/kanri.webp",
+    screenshot: "/screenshots/webp/kanri_light.webp",
+    screenshotDark: "/screenshots/webp/kanri_dark.webp",
     links: { site: "https://kanri.v19.tech/" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2024-06-02",

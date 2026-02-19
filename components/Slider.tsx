@@ -22,7 +22,7 @@ export function Slider({ filterType = 'personal' }: SliderProps) {
         if (work.screenshot) {
           return (
             <Link key={work.slug} href={`/work/${work.slug}`} className="block group font-bricolage">
-              <div className="relative w-[360px] h-[200px] rounded-xl overflow-hidden border-2 border-foreground/10 border-dotted bg-foreground/[0.03]">
+              <div className="relative w-[360px] h-[200px] rounded-xl overflow-hidden border-2 border-foreground/10 dark:border-none border-dotted bg-foreground/[0.03]">
                 {/* Blurred backdrop */}
                 <img
                   src={work.screenshot}
@@ -30,16 +30,35 @@ export function Slider({ filterType = 'personal' }: SliderProps) {
                   aria-hidden="true"
                   draggable="false"
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.02] contrast-200 saturate-200 brightness-120 rounded-xl z-0"
+                  className={`absolute inset-0 w-full h-full object-cover blur-xl opacity-20 dark:opacity-40 scale-[1.02] contrast-200 saturate-200 brightness-120 rounded-xl z-0 ${work.screenshotDark ? "dark:hidden" : ""}`}
                 />
+                {work.screenshotDark && (
+                  <img
+                    src={work.screenshotDark}
+                    alt={`${work.title} dark background`}
+                    aria-hidden="true"
+                    draggable="false"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.02] contrast-200 saturate-200 brightness-120 rounded-xl z-0 hidden dark:block"
+                  />
+                )}
                 {/* Main screenshot */}
                 <img
                   src={work.screenshot}
                   alt={work.title}
                   draggable="false"
                   decoding="async"
-                  className="relative z-10 object-cover w-full h-full transition-all duration-500 rounded-xl group-hover:scale-[1.015] group-hover:brightness-90"
+                  className={`relative z-10 object-cover w-full h-full transition-all duration-500 rounded-xl group-hover:scale-[1.015] group-hover:brightness-90 ${work.screenshotDark ? "dark:hidden" : ""}`}
                 />
+                {work.screenshotDark && (
+                  <img
+                    src={work.screenshotDark}
+                    alt={`${work.title} dark mode`}
+                    draggable="false"
+                    decoding="async"
+                    className="relative z-10 object-cover w-full h-full transition-all duration-500 rounded-xl group-hover:scale-[1.015] group-hover:brightness-90 hidden dark:block"
+                  />
+                )}
 
                 {/* Hover overlay with backdrop blur + centered description */}
                 {work.summary && (

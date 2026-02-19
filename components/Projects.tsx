@@ -7,6 +7,7 @@ import { getWorkList } from "@/data/work";
 import { ExternalLink } from "lucide-react";
 
 const thingy = ["Stuff ", "I ", "have ", "built."];
+const thingyx = ["Agency", "Work"]
 
 export default function Projects() {
   const allWorks = getWorkList();
@@ -18,8 +19,8 @@ export default function Projects() {
   const agencyProjects = allWorks.filter((w) => w.type === "agency");
 
   return (
-    <section className="w-full min-h-screen text-foreground font-satoshi wrapperx">
-      <div className="max-w-4xl mx-auto">
+    <section className="w-full text-foreground font-satoshi pt-8 pb-12 md:pt-12 md:pb-20">
+      <div className="max-w-5xl mx-auto">
         {/* Personal Projects Header */}
         <h2 className="text-4xl font-bold mb-20 text-center text-foreground/60 flex items-center justify-center">
           {thingy.map((word, index) => (
@@ -43,21 +44,33 @@ export default function Projects() {
         </div>
 
         {/* Agency Projects Section */}
+        <motion.h2
+          className="text-4xl font-bold mb-20 pt-12 text-center text-foreground/60 flex items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          {thingyx.map((word, index) => (
+            <motion.span
+              key={index}
+              className="inline-block mr-2"
+              variants={{
+                hidden: { opacity: 0, y: 10, filter: "blur(5px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)" }
+              }}
+              transition={{ duration: 0.8, delay: index * 0.2, type: "decay" }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h2>
+
         {agencyProjects.length > 0 && (
-          <FadeInWhenVisible>
-            <div className="mt-32 mb-16 flex flex-col items-center justify-center gap-4">
-              <div className="flex items-center gap-4">
-                <h2 className="text-4xl font-bold text-center text-foreground/60">
-                  Agency Work
-                </h2>
-              </div>
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {agencyProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
-          </FadeInWhenVisible>
         )}
       </div>
     </section>
@@ -87,14 +100,26 @@ function ProjectCard({ project }: { project: any }) {
               className="block relative w-full"
             >
               {/* Blurred Background Screenshot */}
-              <Image
-                src={project.screenshot}
-                alt={`${project.title} background`}
-                width={460}
-                height={200}
-                className="absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.04] contrast-200 saturate-200 brightness-120 rounded-xl z-0"
-                aria-hidden="true"
-              />
+              <div className="absolute top-0 left-0 w-full h-full rounded-xl z-0">
+                <Image
+                  src={project.screenshot}
+                  alt={`${project.title} background`}
+                  width={460}
+                  height={200}
+                  className={`absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-20 dark:opacity-40 scale-[1.04] contrast-200 saturate-200 brightness-120 ${project.screenshotDark ? "dark:hidden" : ""}`}
+                  aria-hidden="true"
+                />
+                {project.screenshotDark && (
+                  <Image
+                    src={project.screenshotDark}
+                    alt={`${project.title} dark background`}
+                    width={460}
+                    height={200}
+                    className="absolute top-0 left-0 w-full h-full object-cover blur-xl opacity-10 dark:opacity-40 scale-[1.04] contrast-200 saturate-200 brightness-120 hidden dark:block"
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
 
               {/* Main Screenshot */}
               <Image
@@ -102,14 +127,23 @@ function ProjectCard({ project }: { project: any }) {
                 alt={project.title}
                 width={460}
                 height={200}
-                className="relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2"
+                className={`relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2 border border-foreground/10 dark:border-none ${project.screenshotDark ? "dark:hidden" : ""}`}
               />
+              {project.screenshotDark && (
+                <Image
+                  src={project.screenshotDark}
+                  alt={`${project.title} dark mode`}
+                  width={460}
+                  height={200}
+                  className="relative z-10 object-cover group-hover:scale-[1.015] transition-all duration-500 rounded-xl mb-2 hidden dark:block"
+                />
+              )}
             </Link>
 
             {/* Status Pill (Bottom Left) */}
             {project.status && (
               <div className="absolute bottom-5 left-2 z-20 pointer-events-none">
-                <span className="px-2.5 py-1 text-xs rounded-full bg-white/10 text-white border-2 border-white/5 backdrop-blur-sm">
+                <span className="px-2.5 py-1 text-xs rounded-full bg-black/0 dark:bg-white/10 text-foreground border-2 border-black/5 dark:border-white/5 backdrop-blur-sm">
                   {project.status}
                 </span>
               </div>
@@ -122,7 +156,7 @@ function ProjectCard({ project }: { project: any }) {
                   siteUrl ? "group-hover/image:-translate-x-24" : ""
                 }`}
               >
-                <span className="px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/30 text-white border-2 border-blue-500/30 backdrop-blur-sm transition-all duration-300">
+                <span className="px-2.5 py-1 font-bricolage font-semibold text-xs rounded-full bg-blue-500/50 dark:bg-blue-500/30 text-white border-2 border-blue-500/15 dark:border-blue-500/30 backdrop-blur-sm transition-all duration-300">
                   {project.platform}
                 </span>
               </div>
@@ -136,7 +170,7 @@ function ProjectCard({ project }: { project: any }) {
                 rel="noopener noreferrer"
                 className="absolute bottom-4 right-2 z-30 opacity-0 translate-y-2 group-hover/image:translate-y-0 group-hover/image:opacity-100 transition-all duration-500 ease-out"
               >
-                <button className="flex items-center gap-2 px-2.5 py-1 bg-white/90 dark:bg-black/80 text-foreground text-xs font-bold rounded-full shadow-lg backdrop-blur-md hover:bg-white dark:hover:bg-black transition-all duration-500 border-2 border-foreground/10 cursor-pointer">
+                <button className="flex items-center gap-2 px-2.5 py-1 bg-white/90 dark:bg-black/80 text-foreground text-xs font-bold rounded-full backdrop-blur-md hover:bg-white dark:hover:bg-black transition-all duration-500 border-2 border-foreground/10 cursor-pointer">
                   <ExternalLink size={14} />
                   <span>Launch</span>
                 </button>
