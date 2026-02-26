@@ -84,7 +84,7 @@ export const works: WorkItem[] = [
     logo: { src: "/logos/navi.png", zoom: 1.2 },
     screenshot: "/screenshots/webp/navi_ai_light.webp",
     screenshotDark: "/screenshots/webp/navi_ai_dark.webp",
-    links: { site: "https://navi.vashishtamithra.com" },
+    links: { site: "https://navi.v19.tech" },
     type: "personal",
     highlights: [
       "Goals and routines dashboard",
