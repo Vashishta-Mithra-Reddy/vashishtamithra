@@ -14,22 +14,37 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = getWorkBySlug(slug);
   if (!item) return { title: "Work Not Found" };
-  const title = `${item.title} | ${item.summary} | ${item.description}`;
-  const description = item.description || item.summary || "Work detail";
+  const title = item.summary ? `${item.title} — ${item.summary}` : item.title;
+  const description = item.description || item.summary || "Project details and outcomes.";
+  const keywords = item.tech && item.tech.length ? item.tech : undefined;
   return {
     title,
     description,
+    keywords,
+    alternates: {
+      canonical: `/work/${item.slug}`,
+    },
     openGraph: {
+      type: "article",
+      siteName: "V19",
       title,
       description,
       url: `/work/${item.slug}`,
-      images: item.screenshot ? [{ url: item.screenshot }] : undefined
+      images: item.screenshot
+        ? [
+            {
+              url: item.screenshot,
+              alt: `${item.title} preview`,
+            },
+          ]
+        : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
-    }
+      description,
+      images: item.screenshot ? [item.screenshot] : undefined,
+    },
   };
 }
 

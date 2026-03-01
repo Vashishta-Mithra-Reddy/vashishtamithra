@@ -1,6 +1,34 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Space",
+  description: "A curated collection of projects, experiments, and shipped products.",
+  alternates: {
+    canonical: "/space",
+  },
+  openGraph: {
+    title: "Space",
+    description: "A curated collection of projects, experiments, and shipped products.",
+    url: "/space",
+    images: [
+      {
+        url: "/screenshots/webp/whitewaters_light.webp",
+        width: 1200,
+        height: 630,
+        alt: "Projects and experiments",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Space",
+    description: "A curated collection of projects, experiments, and shipped products.",
+    images: ["/screenshots/webp/whitewaters_light.webp"],
+  },
+};
 
 const allProjects = [
   // {

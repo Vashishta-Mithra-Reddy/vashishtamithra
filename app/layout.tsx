@@ -18,14 +18,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import PWA from "@/components/PWA";
 import { ProgressiveBlur } from "@/components/ui/skiper-ui/skiper41";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+const defaultUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://vashishtamithra.com");
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Vashishta Mithra Reddy",
-  description: "Vashishta Mithra Reddy's Portfolio",
+  title: {
+    default: "Vashishta Mithra Reddy",
+    template: "%s | Vashishta Mithra Reddy",
+  },
+  description: "Portfolio of Vashishta Mithra Reddy featuring product design, engineering, and shipped work.",
   applicationName: "V19",
   manifest: "/manifest.webmanifest",
   themeColor: [
@@ -41,6 +44,65 @@ export const metadata: Metadata = {
     capable: true,
     title: "V19",
     statusBarStyle: "black-translucent",
+  },
+  keywords: [
+    "Vashishta Mithra Reddy",
+    "V19",
+    "portfolio",
+    "product designer",
+    "frontend engineer",
+    "full stack",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "SaaS",
+    "startup",
+    "case studies",
+    "projects",
+  ],
+  authors: [{ name: "Vashishta Mithra Reddy", url: "https://www.vashishtamithra.com" }],
+  creator: "Vashishta Mithra Reddy",
+  publisher: "V19",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: "V19",
+    title: "Vashishta Mithra Reddy",
+    description: "Portfolio of Vashishta Mithra Reddy featuring product design, engineering, and shipped work.",
+    url: defaultUrl,
+    locale: "en_US",
+    images: [
+      {
+        url: "/screenshots/webp/hiresynq_light.webp",
+        width: 1200,
+        height: 630,
+        alt: "V19 portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@v19tech",
+    creator: "@v19tech",
+    title: "Vashishta Mithra Reddy",
+    description: "Portfolio of Vashishta Mithra Reddy featuring product design, engineering, and shipped work.",
+    images: ["/screenshots/webp/hiresynq_light.webp"],
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
   },
 };
 
