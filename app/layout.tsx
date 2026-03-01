@@ -18,9 +18,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import PWA from "@/components/PWA";
 import { ProgressiveBlur } from "@/components/ui/skiper-ui/skiper41";
 
-const defaultUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://vashishtamithra.com");
+const defaultUrl = "https://vashishtamithra.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
@@ -84,10 +82,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/screenshots/webp/hiresynq_light.webp",
+        url: "/screenshots/webp/navi.webp",
         width: 1200,
         height: 630,
-        alt: "V19 portfolio preview",
+        alt: "Vashishta Mithra Reddy portfolio preview",
       },
     ],
   },
@@ -97,7 +95,7 @@ export const metadata: Metadata = {
     creator: "@v19tech",
     title: "Vashishta Mithra Reddy",
     description: "Portfolio of Vashishta Mithra Reddy featuring product design, engineering, and shipped work.",
-    images: ["/screenshots/webp/hiresynq_light.webp"],
+    images: ["/screenshots/webp/navi.webp"],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

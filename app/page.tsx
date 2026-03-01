@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/screenshots/webp/hiresynq_light.webp",
+        url: "/screenshots/webp/navi.webp",
         width: 1200,
         height: 630,
-        alt: "V19 portfolio preview",
+        alt: "Vashishta Mithra Reddy portfolio preview",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vashishta Mithra Reddy",
     description: "Portfolio of Vashishta Mithra Reddy featuring product design, engineering, and shipped work.",
-    images: ["/screenshots/webp/hiresynq_light.webp"],
+    images: ["/screenshots/webp/navi.webp"],
   },
 };
 

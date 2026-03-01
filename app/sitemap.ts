@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getWorkList } from "@/data/work";
 
-const defaultUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://vashishtamithra.com");
+const defaultUrl = "https://vashishtamithra.com";
 
 const toAbsoluteUrl = (path: string) => new URL(path, defaultUrl).toString();
 
