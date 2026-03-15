@@ -69,7 +69,7 @@ export default function Me() {
           </div>
 
           {/* About Me */}
-          <div className="w-full max-w-5xl text-left space-y-6 px-2 md:px-8 pt-4 md:pt-6">
+          <div className="w-full max-w-5xl text-left space-y-6 px-2 md:px-8 pt-8 md:pt-10">
             {/* <FadeInWhenVisible>
               <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
                 About Me
