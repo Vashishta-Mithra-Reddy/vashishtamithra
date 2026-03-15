@@ -14,6 +14,7 @@ export default function Header() {
     const pathname = usePathname();
     const isWorkPage = pathname.startsWith("/work/");
     const thingy = resolvedTheme === "dark" ? "{Turn on the lights?} ->" : "{Turn off the lights?} -> ";
+    const thingyx = resolvedTheme === "dark" ? "" : "{Lights Out?}";
     const [hoverCar, setHoverCar] = useState(false);
     return (
         <motion.nav
@@ -85,7 +86,8 @@ export default function Header() {
             </div>
             {/* <Navigation /> */}
             <div className="flex flex-row items-center">
-              <p className="font-bricolage font-bold text-foreground/20 pr-0.5">{thingy}</p>
+              <p className="hidden md:block font-bricolage font-bold text-foreground/20 pr-0.5">{thingy}</p>
+              <p className="md:hidden block font-bricolage font-bold text-foreground/20 pr-0.5">{thingyx}</p>
               <div className="flex flex-row items-center gap-4">
               <ThemeSwitcher/>
               <Link

@@ -16,10 +16,10 @@ export default function Projects() {
   const agencyProjects = allWorks.filter((w) => w.type === "agency");
 
   return (
-    <section className="w-full text-foreground font-satoshi pt-8 pb-12 md:pt-0 md:pb-20">
+    <section className="w-full text-foreground font-satoshi pt-0 pb-12 md:pt-0 md:pb-20">
       <div className="max-w-5xl mx-auto">
         {/* Personal Projects Header */}
-        <AnimatedHeading text="Stuff I have built." />
+        <AnimatedHeading text="Stuff I have built." className="ml-3 md:ml-0 pt-0! text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
 
         {/* Personal Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8">
@@ -29,7 +29,7 @@ export default function Projects() {
         </div>
 
         {/* Agency Projects Section */}
-        <AnimatedHeading text="Agency Work" />
+        <AnimatedHeading text="Agency Work" className="text-2xl sm:text-3xl lg:text-3xl" />
 
         {agencyProjects.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8">

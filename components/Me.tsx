@@ -53,23 +53,35 @@ export default function Me() {
       {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] -z-10" /> */}
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-2 md:px-6">
         <div className="flex flex-col items-center text-center space-y-12">
+          <div className="w-full max-w-5xl px-0 md:px-4 mb-0">
+            <FadeInWhenVisible>
+              <div className="w-full overflow-hidden">
+                <img
+                src="/sea_stamp.webp"
+                alt="Sea stamp hero"
+                className="w-full h-auto object-cover"
+                loading="eager"
+                />
+              </div>
+            </FadeInWhenVisible>
+          </div>
 
           {/* About Me */}
-          <div className="w-full max-w-5xl text-left space-y-6 px-8 pt-16">
+          <div className="w-full max-w-5xl text-left space-y-6 px-2 md:px-8 pt-4 md:pt-6">
             {/* <FadeInWhenVisible>
               <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
                 About Me
               </h2>
             </FadeInWhenVisible> */}
             <FadeInWhenVisible>
-              <p className="text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed">
                 I'm <span className="text-foreground underline underline-offset-4 decoration-wavy decoration-blue-500">Vashishta</span> a product-focused Founding Engineer who loves building 0-to-1 AI applications. 
                 {/* I specialize in the <span className="font-semibold text-foreground">Next.js, Supabase, and Neon DB</span> ecosystem, 
                 with a deep focus on <span className="font-semibold text-foreground">RAG</span> and automation. */}
               </p>
-              <p className="text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed mt-4">
+              <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed mt-4">
                 I have a proven track record of architecting and shipping production-ready MVPs for international startups, 
                 obsessing over performance, scalability, and clean system design.
               </p>
@@ -106,24 +118,24 @@ export default function Me() {
           </FadeInWhenVisible> */}
 
           {/* Experience */}
-          <div className="w-full max-w-5xl space-y-8 px-8">
+          <div className="w-full max-w-5xl space-y-8 px-2 md:px-8">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4">
-                <AnimatedHeading text="Experience" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
+                <AnimatedHeading text="Experience" className="!mb-0 !pt-0 !px-0 text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
               </div>
             </FadeInWhenVisible>
 
-            <div className="grid grid-cols-1 gap-12 ml-4 mx-auto text-left relative">
+            <div className="grid grid-cols-1 gap-12 md:ml-4 mx-auto text-left relative">
               {EXPERIENCES.map((experience, index) => (
                 <FadeInWhenVisible key={index}>
                   <div className="group relative">
                     
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
                       <div>
-                        <h3 className="text-xl font-bold font-jakarta text-foreground">
+                        <h3 className="text-lg sm:text-xl font-bold font-jakarta text-foreground">
                           {experience.role}
                         </h3>
-                        <p className="text-foreground/60 font-medium font-bricolage text-lg">
+                        <p className="text-foreground/60 font-medium font-bricolage text-base sm:text-lg">
                           {experience.company}
                         </p>
                       </div>
@@ -133,7 +145,7 @@ export default function Me() {
                       </div>
                     </div>
 
-                    <ul className="list-disc list-outside ml-4 space-y-2 mb-6 text-foreground/70 font-bricolage leading-relaxed marker:text-foreground/30">
+                    <ul className="list-disc list-outside ml-4 space-y-2 mb-6 text-foreground/70 font-bricolage leading-relaxed marker:text-foreground/30 text-sm sm:text-base">
                       {experience.description.map((point, i) => (
                         <li key={i} className="pl-1">
                           {point}
@@ -157,10 +169,12 @@ export default function Me() {
             </div>
           </div>
 
-          <div className="w-full pt-12 space-y-8 max-w-5xl px-8">
+          <div className="w-full pt-12 space-y-8 max-w-5xl px-2 md:px-8">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
-                <AnimatedHeading text="Skills? (I mostly work with;)" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
+                <AnimatedHeading text="Skills (I mostly work with;)" className="!mb-0 !pt-0 !px-0 hidden md:block text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
+                <AnimatedHeading text="Skills" className="!mb-0 !pt-0 !px-0 md:hidden text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
+
                 {/* <div className="w-20 h-1.5 bg-foreground/10 rounded-full" /> */}
               </div>
             </FadeInWhenVisible>
@@ -170,7 +184,7 @@ export default function Me() {
                 {SKILLS.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 text-sm font-medium rounded-xl bg-foreground/5 border border-foreground/10 text-foreground/80 hover:bg-foreground/10 transition-colors cursor-default"
+                    className="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-xl bg-foreground/5 border border-foreground/10 text-foreground/80 hover:bg-foreground/10 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
@@ -179,7 +193,7 @@ export default function Me() {
             </FadeInWhenVisible>
           </div>
 
-          <div className="space-y-8 w-fit pt-12">
+          <div className="hidden md:block space-y-8 w-fit pt-12">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
                 <AnimatedHeading text="Activity" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
@@ -187,7 +201,7 @@ export default function Me() {
             </FadeInWhenVisible>
 
             <FadeInWhenVisible>
-              <div className="flex justify-center w-full overflow-x-auto pb-4">
+              <div className="justify-center w-full overflow-x-auto pb-4">
                 <ContributionGraph />
               </div>
             </FadeInWhenVisible>

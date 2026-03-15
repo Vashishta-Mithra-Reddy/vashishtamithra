@@ -12,7 +12,7 @@ export default function AnimatedHeading({
   
   return (
     <motion.h2
-      className={`text-4xl font-bold mb-12 pt-12 text-left text-foreground/60 flex items-start justify-start font-satoshi px-8 ${className}`}
+      className={`text-2xl md:text-4xl font-bold mb-12 md:pt-12 text-left text-foreground/60 flex items-start justify-start font-satoshi px-8 ${className}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.6 }}
