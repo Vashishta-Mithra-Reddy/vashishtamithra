@@ -48,14 +48,14 @@ const EXPERIENCES = [
 
 export default function Me() {
   return (
-    <section className="w-full pb-0 overflow-hidden relative wrapperx">
+    <section className="w-full pb-0 overflow-hidden relative">
       {/* Background Gradients */}
       {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] -z-10" /> */}
 
-      <div className="max-w-7xl mx-auto px-2 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-12">
-          <div className="w-full max-w-5xl px-0 md:px-4 mb-0">
+      <div className="max-w-7xl mx-auto px-0 md:px-6">
+        <div className="flex flex-col items-center text-center space-y-12 md:space-y-16">
+          <div className="w-full max-w-5xl px-0 md:px-4 mb-8">
             <FadeInWhenVisible>
               <div className="w-full overflow-hidden">
                 <img
@@ -69,7 +69,7 @@ export default function Me() {
           </div>
 
           {/* About Me */}
-          <div className="w-full max-w-5xl text-left space-y-6 px-2 md:px-8 pt-8 md:pt-10">
+          <div className="w-full max-w-5xl text-left px-2 md:px-8 mb-6">
             {/* <FadeInWhenVisible>
               <h2 className="text-3xl lg:text-3xl text-foreground/85 font-bold font-satoshi">
                 About Me
@@ -169,7 +169,7 @@ export default function Me() {
             </div>
           </div>
 
-          <div className="w-full pt-12 space-y-8 max-w-5xl px-2 md:px-8">
+          <div className="w-full space-y-8 max-w-5xl px-2 md:px-8">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
                 <AnimatedHeading text="Skills (I mostly work with;)" className="!mb-0 !pt-0 !px-0 hidden md:block text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
@@ -193,7 +193,7 @@ export default function Me() {
             </FadeInWhenVisible>
           </div>
 
-          <div className="hidden md:block space-y-8 w-fit pt-12">
+          <div className="hidden md:block space-y-8 w-fit">
             <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
                 <AnimatedHeading text="Activity" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />

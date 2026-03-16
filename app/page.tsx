@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="wrapperx">
     {/* <LoadingAnimation> */}
     {/* <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-satoshi animate-in fade-in">
       <h1 className="text-3xl font-bold">
@@ -44,6 +44,6 @@ export default function Home() {
     <Me/>
     <Projects/>
     {/* </LoadingAnimation> */}
-    </>
+    </div>
   );
 }
