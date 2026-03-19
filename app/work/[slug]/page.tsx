@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getWorkBySlug, getAllWorkSlugs } from "@/data/work";
-import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible";
+import StaggerFadeIn from "@/components/animations/StaggerFadeIn";
 import { Slider } from "@/components/Slider";
 import { ArrowUpRight, Github, Calendar, Layers, Code, CheckCircle2 } from "lucide-react";
 
@@ -93,7 +93,7 @@ export default async function WorkPage({
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-16 pb-12">
-          <FadeInWhenVisible>
+          <StaggerFadeIn>
             <div className="flex flex-col gap-4">
               {/* <Link
                 href="/"
@@ -157,7 +157,7 @@ export default async function WorkPage({
                 </div>
               </div>
             </div>
-          </FadeInWhenVisible>
+          </StaggerFadeIn>
         </div>
       </section>
 
@@ -165,7 +165,7 @@ export default async function WorkPage({
         {/* Left Column: Content */}
         <div className="lg:col-span-8 space-y-16">
           {/* Description */}
-          <FadeInWhenVisible>
+          <StaggerFadeIn delay={0.1}>
             <div className="prose prose-lg prose-invert max-w-none">
               <h2 className="text-2xl font-bold font-jakarta mb-6 flex items-center gap-2">
                 {/* <span className="w-8 h-1 bg-foreground/20 rounded-full"></span> */}
@@ -175,11 +175,11 @@ export default async function WorkPage({
                 {item.description}
               </p>
             </div>
-          </FadeInWhenVisible>
+          </StaggerFadeIn>
 
           {/* Gallery */}
           {(gallery.length > 0 || showMainScreenshot) && (
-            <FadeInWhenVisible>
+            <StaggerFadeIn delay={0.2}>
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold font-jakarta mb-6 flex items-center gap-2">
                   {/* <span className="w-8 h-1 bg-foreground/20 rounded-full"></span> */}
@@ -221,30 +221,31 @@ export default async function WorkPage({
                   )}
                 </div>
               </div>
-            </FadeInWhenVisible>
+            </StaggerFadeIn>
           )}
 
           {/* Highlights */}
           {item.highlights && item.highlights.length > 0 && (
-            <FadeInWhenVisible>
               <div className="space-y-6">
+                <StaggerFadeIn delay={0.3}>
                 <h2 className="text-2xl font-bold font-jakarta mb-6 flex items-center gap-2">
                   {/* <span className="w-8 h-1 bg-foreground/20 rounded-full"></span> */}
                   Key Highlights
                 </h2>
+                </StaggerFadeIn>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {item.highlights.map((highlight, idx) => (
+                    <StaggerFadeIn key={idx} delay={0.35 + idx * 0.07}>
                     <div
-                      key={idx}
                       className="p-4 rounded-xl bg-foreground/5 border border-foreground/10 flex items-start gap-3 hover:bg-foreground/10 transition-colors"
                     >
                       <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                       <span className="text-foreground/80 font-medium">{highlight}</span>
                     </div>
+                    </StaggerFadeIn>
                   ))}
                 </div>
               </div>
-            </FadeInWhenVisible>
           )}
         </div>
 
@@ -252,6 +253,7 @@ export default async function WorkPage({
         <aside className="lg:col-span-4 space-y-8">
           <div className="sticky top-32 space-y-8">
             {/* Actions */}
+            <StaggerFadeIn delay={0.15}>
             <div className="flex flex-col gap-3">
               {item.links?.site && (
                 <Link
@@ -276,8 +278,10 @@ export default async function WorkPage({
                 </Link>
               )}
             </div>
+            </StaggerFadeIn>
 
             {/* Project Details Card */}
+            <StaggerFadeIn delay={0.25}>
             <div className="p-6 rounded-2xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm space-y-6">
               {/* Status */}
               {item.status && (
@@ -326,9 +330,11 @@ export default async function WorkPage({
                 </div>
               )}
             </div>
+            </StaggerFadeIn>
 
             {/* Tech Stack */}
             {item.tech && item.tech.length > 0 && (
+              <StaggerFadeIn delay={0.35}>
               <div className="space-y-4">
                 <h3 className="text-lg font-bold font-jakarta flex items-center gap-2">
                   <Code className="w-5 h-5" />
@@ -345,6 +351,7 @@ export default async function WorkPage({
                   ))}
                 </div>
               </div>
+              </StaggerFadeIn>
             )}
           </div>
         </aside>
@@ -352,10 +359,12 @@ export default async function WorkPage({
 
       {/* More Projects Slider */}
       <section className="w-full pt-12 pb-20 border-t border-foreground/10 bg-foreground/[0.02]">
+        <StaggerFadeIn>
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <h2 className="text-3xl font-bold font-jakarta">More Projects</h2>
           <p className="text-foreground/60 mt-2">Explore other things I've built</p>
         </div>
+        </StaggerFadeIn>
         <div className="w-full">
           <Slider filterType={item.type} />
         </div>

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import FadeInWhenVisible from "./animations/FadeInWhenVisible";
+import TextReveal from "./animations/TextReveal";
 import ContributionGraph from "./contribution-graph";
 import AnimatedHeading from "./AnimatedHeading";
+import HeroImage from "./HeroImage";
 import { SKILLS, EXPERIENCES } from "@/data/profile";
 
 export default function Me() {
@@ -14,16 +16,7 @@ export default function Me() {
       <div className="max-w-7xl mx-auto px-0 md:px-6">
         <div className="flex flex-col items-center text-center space-y-12 md:space-y-16">
           <div className="w-full max-w-5xl px-0 md:px-4 mb-8">
-            <FadeInWhenVisible>
-              <div className="w-full overflow-hidden">
-                <img
-                src="/sea_stamp.webp"
-                alt="Sea stamp hero"
-                className="w-full h-auto object-cover"
-                loading="eager"
-                />
-              </div>
-            </FadeInWhenVisible>
+            <HeroImage />
           </div>
 
           {/* About Me */}
@@ -33,17 +26,18 @@ export default function Me() {
                 About Me
               </h2>
             </FadeInWhenVisible> */}
-            <FadeInWhenVisible>
+            <TextReveal>
               <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed">
-                I'm <span className="text-foreground underline underline-offset-4 decoration-wavy decoration-blue-500">Vashishta</span> a product-focused Founding Engineer who loves building 0-to-1 AI applications. 
-                {/* I specialize in the <span className="font-semibold text-foreground">Next.js, Supabase, and Neon DB</span> ecosystem, 
+                I'm <span className="text-foreground underline underline-offset-4 decoration-wavy decoration-blue-500">Vashishta</span> a product-focused Founding Engineer who loves building 0-to-1 AI applications.
+                {/* I specialize in the <span className="font-semibold text-foreground">Next.js, Supabase, and Neon DB</span> ecosystem,
                 with a deep focus on <span className="font-semibold text-foreground">RAG</span> and automation. */}
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed mt-4">
-                I have a proven track record of architecting and shipping production-ready MVPs for international startups, 
-                obsessing over performance, scalability, and clean system design.
-              </p>
-            </FadeInWhenVisible>
+            </TextReveal>
+            <TextReveal
+              text="I have a proven track record of architecting and shipping production-ready MVPs for international startups, obsessing over performance, scalability, and clean system design."
+              delay={0.15}
+              className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed mt-4"
+            />
           </div>
 
           {/* Socials - Commented out as requested */}
@@ -77,17 +71,15 @@ export default function Me() {
 
           {/* Experience */}
           <div className="w-full max-w-5xl space-y-8 px-2 md:px-8">
-            <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4">
                 <AnimatedHeading text="Experience" className="!mb-0 !pt-0 !px-0 text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
               </div>
-            </FadeInWhenVisible>
 
             <div className="grid grid-cols-1 gap-12 md:ml-4 mx-auto text-left relative">
               {EXPERIENCES.map((experience, index) => (
-                <FadeInWhenVisible key={index}>
-                  <div className="group relative">
-                    
+                <div key={index} className="group relative">
+
+                    <TextReveal>
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
                       <div>
                         <h3 className="text-lg sm:text-xl font-bold font-jakarta text-foreground">
@@ -102,15 +94,22 @@ export default function Me() {
                         <span className="whitespace-nowrap">{experience.period}</span>
                       </div>
                     </div>
+                    </TextReveal>
 
-                    <ul className="list-disc list-outside ml-4 space-y-2 mb-6 text-foreground/70 font-bricolage leading-relaxed marker:text-foreground/30 text-sm sm:text-base">
+                    <div className="ml-4 space-y-2 mb-6 text-foreground/70 font-bricolage leading-relaxed text-sm sm:text-base">
                       {experience.description.map((point, i) => (
-                        <li key={i} className="pl-1">
-                          {point}
-                        </li>
+                        <div key={i} className="flex items-start gap-2 pl-1">
+                          <span className="text-foreground/30 shrink-0 leading-relaxed">•</span>
+                          <TextReveal
+                            text={point}
+                            delay={0.1 + i * 0.08}
+                            stagger={0.02}
+                          />
+                        </div>
                       ))}
-                    </ul>
+                    </div>
 
+                    <TextReveal delay={0.12 + experience.description.length * 0.07 + 0.06}>
                     <div className="flex flex-wrap gap-2">
                       {experience.tech.map((t) => (
                         <span
@@ -121,42 +120,37 @@ export default function Me() {
                         </span>
                       ))}
                     </div>
-                  </div>
-                </FadeInWhenVisible>
+                    </TextReveal>
+                </div>
               ))}
             </div>
           </div>
 
           <div className="w-full space-y-8 max-w-5xl px-2 md:px-8">
-            <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
                 <AnimatedHeading text="Skills (I mostly work with;)" className="!mb-0 !pt-0 !px-0 hidden md:block text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
                 <AnimatedHeading text="Skills" className="!mb-0 !pt-0 !px-0 md:hidden text-2xl sm:text-3xl lg:text-3xl text-foreground/90" />
 
                 {/* <div className="w-20 h-1.5 bg-foreground/10 rounded-full" /> */}
               </div>
-            </FadeInWhenVisible>
 
-            <FadeInWhenVisible>
-              <div className="flex flex-wrap gap-3">
-                {SKILLS.map((skill) => (
+              <div className="flex flex-wrap gap-x-3 gap-y-5">
+                {SKILLS.map((skill, i) => (
+                  <TextReveal key={skill} delay={i * 0.04} inline>
                   <span
-                    key={skill}
-                    className="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-xl bg-foreground/5 border border-foreground/10 text-foreground/80 hover:bg-foreground/10 transition-colors cursor-default"
+                    className="px-3 py-1.5 text-xs sm:text-base font-medium rounded-xl bg-foreground/5 border border-foreground/10 text-foreground/80 hover:bg-foreground/10 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
+                  </TextReveal>
                 ))}
               </div>
-            </FadeInWhenVisible>
           </div>
 
           <div className="hidden md:block space-y-8 w-fit">
-            <FadeInWhenVisible>
               <div className="flex flex-col items-start gap-4 mb-8">
                 <AnimatedHeading text="Activity" className="!mb-0 !pt-0 !px-0 text-3xl lg:text-3xl text-foreground/90" />
               </div>
-            </FadeInWhenVisible>
 
             <FadeInWhenVisible>
               <div className="justify-center w-full overflow-x-auto pb-4">

@@ -1,10 +1,10 @@
-type LogoConfig = {
+export type LogoConfig = {
   src: string;
   zoom?: number;
   fit?: "contain" | "cover";
 };
 
-type WorkItem = {
+export type WorkItem = {
   slug: string;
   title: string;
   summary: string;
@@ -88,7 +88,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/navi_ai_dark.webp",
     links: { site: "https://navi.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API"],
-    status: "In Development",
+    status: "Currently Building...",
     platform: "Agentic System",
     type: "personal",
     highlights: [
@@ -181,7 +181,7 @@ export const works: WorkItem[] = [
     screenshotDark: "/screenshots/webp/ahara_dark.webp",
     links: { site: "https://ahara.v19.tech" },
     tech: ["React Native", "Next.js", "TypeScript", "Expo", "Supabase", "Drizzle ORM"],
-    status: "In Development",
+    status: "Currently Building...",
     platform: "Native & Web",
     type: "personal",
     highlights: [

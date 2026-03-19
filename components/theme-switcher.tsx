@@ -18,7 +18,11 @@ export function ThemeSwitcher() {
   }, []);
 
   if (!mounted) {
-    return null;
+    return (
+      <div className="flex items-center gap-2 rounded-xl px-4 py-3">
+        <span className="size-6" />
+      </div>
+    );
   }
 
   const toggleTheme = () => {

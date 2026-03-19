@@ -5,7 +5,7 @@ export const SKILLS_1 = [
 
 export const SKILLS_2 = [
   "Framer Motion", "PostgreSQL", "Supabase", "Drizzle", "Docker",
-  "AWS", "GCP", "Cloudflare", "Arduino", "IoT"
+  "AWS", "GCP", "Cloudflare"
 ];
 
 export const SKILLS = [...SKILLS_1, ...SKILLS_2];
