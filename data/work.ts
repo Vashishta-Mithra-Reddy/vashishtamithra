@@ -7,128 +7,138 @@ type LogoConfig = {
 type WorkItem = {
   slug: string;
   title: string;
-  summary?: string;
-  description?: string;
+  summary: string;
+  description: string;
   logo?: string | LogoConfig | Array<string | LogoConfig>;
   screenshot?: string;
   screenshotDark?: string;
   gallery?: string[];
   links?: { site?: string; repo?: string };
-  tech?: string[];
+  tech: string[];
   status?: string;
   date?: string;
-  highlights?: string[];
-  roles?: string[];
+  highlights: string[];
+  roles: string[];
   platform?: string;
-  type?: 'personal' | 'agency';
+  type: 'personal' | 'agency';
 };
 
 export const works: WorkItem[] = [
   {
     slug: "hiresynq",
     title: "HireSynQ",
-    summary: "Talent hiring and culture fit matching.",
-    description: "A simple, transparent hiring flow that connects companies and candidates with the right cultural and role alignment, from discovery to final hire.",
+    summary: "Talent hiring and culture-fit matching.",
+    description: "A hiring platform that syncs companies with pre-vetted candidates through culture-fit alignment, reducing volume while improving match quality from discovery to final hire.",
     logo: "/logos/v19.png",
     screenshot: "/screenshots/webp/hiresynq_light.webp",
     screenshotDark: "/screenshots/webp/hiresynq_dark.webp",
     links: { site: "https://hiresynq.vercel.app" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     type: "agency",
     highlights: [
-      "Simple hiring flow from discovery to hire",
-      "Culture-fit alignment for better matches",
-      "Curated interviews with top candidates"
-    ]
+      "Three-step hiring flow from connect to hire",
+      "Culture-fit alignment for stronger matches",
+      "Pre-vetted candidates across Sales, HR, and Ops"
+    ],
+    roles: ["Frontend", "Design"]
   },
   {
     slug: "rare-cocoa",
     title: "Rare Cocoa",
-    summary: "Farm-to-bar chocolate brand.",
-    description: "A handcrafted, preservative-free chocolate brand from Vijayawada, focused on pure cocoa, authentic flavors, and premium gifting experiences.",
+    summary: "Farm-to-bar chocolate e-commerce.",
+    description: "E-commerce website for a handcrafted chocolate brand from Vijayawada. Showcases their preservative-free, small-batch cocoa products with a premium visual identity and gifting experience.",
     logo: "/logos/rarecocoa.png",
     screenshot: "/screenshots/webp/rarecocoa_light.webp",
     screenshotDark: "/screenshots/webp/rarecocoa_dark.webp",
     links: { site: "https://www.rarecocoa.in" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     type: "agency",
     highlights: [
-      "Farm-to-bar premium chocolate",
-      "Preservative-free small-batch craft",
-      "100% vegan and refined-sugar free"
-    ]
+      "Premium product showcase with gifting flows",
+      "100% vegan, preservative-free brand identity",
+      "Responsive design with dark/light theming"
+    ],
+    roles: ["Frontend", "Design"]
   },
   {
     slug: "socionova",
     title: "Socionova",
-    summary: "SMM and Marketing Agency",
-    description: "Socionova is a SMM and marketing agency that helps businesses grow their online presence and reach new audiences. We provide a range of services, including social media management, content creation, and digital marketing.",
-    logo: "/logos/socionova.png", 
-    screenshot: "/screenshots/webp/socionova_light.webp", 
-    screenshotDark: "/screenshots/webp/socionova_dark.webp", 
+    summary: "Social media marketing agency.",
+    description: "A full-service digital marketing agency offering review management for OTAs, PPC advertising, email automation, and social media growth for businesses scaling their online presence.",
+    logo: "/logos/socionova.png",
+    screenshot: "/screenshots/webp/socionova_light.webp",
+    screenshotDark: "/screenshots/webp/socionova_dark.webp",
     links: { site: "https://socionova.in" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     type: "agency",
-    tech: ["Next.js"],
-    roles: ["Agency Lead"],
     highlights: [
-      "Review management for OTAs",
-      "PPC and online marketing campaigns",
-      "Email marketing and automation"
-    ]
+      "OTA review management and reputation building",
+      "PPC campaigns with A/B testing and budget optimization",
+      "Email marketing automation and segmentation"
+    ],
+    roles: ["Agency Lead", "Frontend"]
   },
   {
     slug: "navi",
     title: "Navi (Project Apotheosis)",
-    summary: "Built to manage my life",
-    platform: "Agentic System",
-    status: "Currently Building...",
-    description: "A focused personal system to track goals, journal entries, habits, and daily routines for continuous self-improvement.",
+    summary: "Personal agentic life system.",
+    description: "An autonomous personal system for tracking goals, journaling, habit management, and daily planning — part of the broader Project Apotheosis initiative for continuous self-improvement.",
     logo: { src: "/logos/navi.png", zoom: 1.2 },
     screenshot: "/screenshots/webp/navi_ai_light.webp",
     screenshotDark: "/screenshots/webp/navi_ai_dark.webp",
     links: { site: "https://navi.v19.tech" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI API"],
+    status: "In Development",
+    platform: "Agentic System",
     type: "personal",
     highlights: [
       "Goals and routines dashboard",
       "Journal and food tracking",
-      "Agentic system for daily planning"
-    ]
+      "Agentic system for autonomous daily planning"
+    ],
+    roles: ["Full Stack", "AI Integration", "Product"]
   },
   {
     slug: "sift",
     title: "Sift (Active Recall Engine)",
-    summary: "Makes Learning Easy",
-    description: "Turn documents into precision-engineered quizzes with focused recall sessions and progress tracking that targets weak spots.",
+    summary: "AI-powered active recall engine.",
+    description: "Transforms documents into quizzes, flashcards, and structured learning paths using AI. Built around spaced repetition and active recall for deeper knowledge retention.",
     logo: { src: "/logos/sift.png", zoom: 1.2 },
     screenshot: "/screenshots/webp/sift_light.webp",
     screenshotDark: "/screenshots/webp/sift_dark.webp",
     links: { site: "https://sift.v19.tech" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API"],
     type: "personal",
     highlights: [
-      "Document upload to quiz generation",
-      "Flow-state active recall sessions",
-      "Progress tracking for mastery"
-    ]
+      "Document-to-quiz generation with AI",
+      "Spaced repetition and active recall sessions",
+      "Progress tracking that targets weak spots"
+    ],
+    roles: ["Full Stack", "AI Integration"]
   },
   {
     slug: "karyakramah-au",
     title: "Kāryakramah AU",
-    summary: "Campus events and venue bookings.",
-    description: "A central hub for Anurag University student activities, event discovery, and venue booking to connect the campus community.",
+    summary: "Campus events and venue booking.",
+    description: "A central hub for Anurag University students to discover events, register for workshops, and book campus venues with real-time availability and faculty-verified listings.",
     logo: "/logos/karyakramah.png",
     screenshot: "/screenshots/webp/au_light.webp",
     screenshotDark: "/screenshots/webp/au_dark.webp",
     links: { site: "https://au.karyakramah.com" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     type: "personal",
     highlights: [
-      "Campus events discovery hub",
-      "Venue booking for student activities",
-      "Community-first engagement flow"
-    ]
+      "Real-time venue availability tracking",
+      "One-click event and workshop registration",
+      "Faculty-verified event listings"
+    ],
+    roles: ["Full Stack", "Design"]
   },
   {
     slug: "hita",
     title: "Hita",
-    summary: "Wellness platform for a healthier you.",
-    description: "AI-powered wellness platform to find clean, healthy products, remedies, and nutritional information. Powered by RAG and embeddings for accurate, context-aware answers to your health queries.",
+    summary: "AI-powered wellness platform.",
+    description: "A wellness platform that helps users discover clean products, trusted remedies, and nutritional information through a context-aware AI assistant powered by RAG and embeddings.",
     logo: "/logos/hita.png",
     screenshot: "/screenshots/webp/hita_light.webp",
     screenshotDark: "/screenshots/webp/hita_dark.webp",
@@ -138,74 +148,73 @@ export const works: WorkItem[] = [
     type: "personal",
     highlights: [
       "Context-aware AI health assistant",
-      "Verified product database",
-      "Holistic wellness remedies"
+      "Verified product and remedy database",
+      "Nutritional information lookup"
     ],
     roles: ["Product", "Frontend", "AI Integration"]
   },
   {
     slug: "contxt",
     title: "Contxt",
-    summary: "RAG as a service.",
-    description: "Plug and play your knowledge bases, manage embeddings, and retrieve intelligence instantly. A powerful RAG-as-a-Service platform designed for developers to integrate AI context seamlessly.",
-    links: { site: "https://contxt.v19.tech" },
+    summary: "RAG-as-a-service for developers.",
+    description: "A developer platform for plug-and-play knowledge base integration, embedding management, and instant intelligence retrieval. Built to make RAG seamless for any application.",
     logo: "/logos/contxt.svg",
     screenshot: "/screenshots/webp/contxt_light.webp",
     screenshotDark: "/screenshots/webp/contxt_dark.webp",
-    // status: "Currently Building...",
-    tech: ["Next.js", "Vector DB", "LLMs", "Drizzle ORM"],
-    roles: ["Full Stack", "AI Engineer"],
+    links: { site: "https://contxt.v19.tech" },
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vector DB", "LLMs", "Drizzle ORM"],
     type: "personal",
     highlights: [
-      "RAG-as-a-service platform",
-      "Embeddings and knowledge base management",
-      "Instant retrieval for developers"
-    ]
+      "Plug-and-play knowledge base integration",
+      "Embedding management and versioning",
+      "Instant retrieval API for developers"
+    ],
+    roles: ["Full Stack", "AI Integration"]
   },
   {
     slug: "ahara",
     title: "Ahāra",
-    summary: "Food diary and trigger analysis platform.",
-    description: "Track how stuff affects you. A food diary and trigger analysis platform helping you discover patterns between your diet and your health/mood.",
+    summary: "Food diary and health tracker.",
+    description: "A cross-platform food diary and trigger analysis app that helps users discover patterns between diet, mood, and health through daily logging and AI-driven insights.",
     logo: "/logos/ahara.svg",
     screenshot: "/screenshots/webp/ahara_light.webp",
     screenshotDark: "/screenshots/webp/ahara_dark.webp",
     links: { site: "https://ahara.v19.tech" },
-    status: "Still in build...",
-    platform: "Native & Web",
     tech: ["React Native", "Next.js", "TypeScript", "Expo", "Supabase", "Drizzle ORM"],
-    roles: ["Full Stack", "Mobile"],
+    status: "In Development",
+    platform: "Native & Web",
     type: "personal",
     highlights: [
       "Fast onboarding and goal setup",
-      "Daily logging for food and mood",
-      "Insights to find health patterns"
-    ]
+      "Daily logging for food, symptoms, and mood",
+      "Pattern discovery and health insights"
+    ],
+    roles: ["Full Stack", "Mobile"]
   },
   {
     slug: "citadel",
     title: "Citadel",
-    summary: "Password manager",
-    description: "A secure, minimal password manager built with modern web crypto and a clean UI. Features zero-knowledge encryption to ensure your data remains truly yours.",
+    summary: "Zero-knowledge password manager.",
+    description: "A secure, minimal password manager built with the Web Crypto API. Features zero-knowledge encryption ensuring all data stays client-side and truly private.",
     logo: "/logos/citadel.png",
     screenshot: "/screenshots/webp/citadel_light.webp",
     screenshotDark: "/screenshots/webp/citadel_dark.webp",
     links: { site: "https://citadel.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Web Crypto API", "Radix UI"],
     date: "2025-08-01",
-    type: "agency",
+    type: "personal",
     highlights: [
-      "Zero-knowledge encryption",
-      "Responsive UI with buttery micro-interactions",
-      "Client-side cryptography"
+      "Zero-knowledge client-side encryption",
+      "Clean UI with smooth micro-interactions",
+      "No server-side secret storage"
     ],
     roles: ["Design", "Frontend", "Backend"]
   },
   {
     slug: "saransha",
-    title: "Saransha",
-    summary: "Social content insights",
-    description: "Extract insights from social content. Transcribes reels and provides clean summaries for quick consumption, helping you get the gist without the scroll.",
+    title: "Sārāmśa",
+    summary: "Social content transcription tool.",
+    description: "Extracts insights from social media content by transcribing reels and generating clean AI summaries for quick consumption — get the gist without the scroll.",
     logo: "/logos/v19.png",
     screenshot: "/screenshots/webp/saransha_light.webp",
     screenshotDark: "/screenshots/webp/saransha_dark.webp",
@@ -213,156 +222,197 @@ export const works: WorkItem[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Whisper API", "FFmpeg"],
     date: "2025-07-01",
     type: "personal",
-    highlights: ["Fast transcript rendering", "Concise AI summaries"],
-    roles: ["Frontend", "AI Integration"]
+    highlights: [
+      "Reel-to-text transcription via Whisper",
+      "Concise AI-generated summaries",
+      "Paste-and-go simplicity"
+    ],
+    roles: ["Full Stack", "AI Integration"]
   },
   {
     slug: "why-kerala",
     title: "Why Kerala?",
-    summary: "Built to convince my friends.",
-    description: "An interactive trip planner designed to convince friends to visit Kerala. Showcases destinations, routes, food, and culture in an engaging, scrollable format.",
+    summary: "Interactive Kerala travel guide.",
+    description: "An immersive, scrollable travel guide showcasing Kerala's destinations, cuisine, routes, and culture through interactive Google Maps integration and visual storytelling.",
     logo: "/logos/whykerala.png",
     screenshot: "/screenshots/webp/whykerala.webp",
     links: { site: "https://whykerala.v19.tech" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Google Maps API"],
     date: "2025-11-01",
     type: "personal",
-    highlights: ["Interactive route planning", "Immersive storytelling", "Cultural showcase"],
+    highlights: [
+      "Interactive route planning with Google Maps",
+      "Visual food and cuisine showcase",
+      "Immersive destination storytelling"
+    ],
     roles: ["Design", "Frontend"]
   },
   {
     slug: "the-baga-village",
     title: "The Baga Village",
-    summary: "Premium hotel collection",
-    description: "Experience luxury and comfort at The Baga Village, a premium hotel collection in Goa. A high-conversion booking website showcasing properties with a coastal charm.",
+    summary: "Premium hotel booking website.",
+    description: "A high-conversion booking website for a premium hotel collection across Goa and Manali, featuring property showcases, amenity highlights, and streamlined reservation flows.",
     logo: "/logos/tbv.png",
     screenshot: "/screenshots/webp/thebagavillage.webp",
     links: { site: "https://bagavillage.vercel.app" },
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     date: "2025-08-15",
     type: "agency",
-    highlights: ["High-conversion landing page", "Property showcase", "Seamless booking flow"],
-    roles: ["Frontend", "Designer"]
+    highlights: [
+      "Multi-property showcase with pricing",
+      "High-conversion booking flow",
+      "Responsive design with AVIF optimization"
+    ],
+    roles: ["Frontend", "Design"]
   },
   {
     slug: "nidhi",
     title: "Nidhi",
-    summary: "Decentralized fundraising",
-    description: "Empowering startups with decentralized funding. Leverage blockchain-powered smart contracts for transparent funding, gain token incentives, and connect with expert mentors.",
+    summary: "Decentralized startup fundraising.",
+    description: "A blockchain-powered crowdfunding platform enabling transparent startup funding through smart contracts, token incentives for backers, and expert mentor connections.",
     logo: "/logos/nidhi.png",
     screenshot: "/screenshots/webp/nidhi.webp",
     links: { site: "https://nidhi.v19.tech" },
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Web3", "Smart Contracts", "Solidity", "ThirdWeb"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Solidity", "ThirdWeb", "Ethers.js"],
     date: "2025-01-20",
     type: "personal",
-    highlights: ["Smart contract integration", "Transparent fund tracking", "Token incentives"],
-    roles: ["Frontend", "Web3 Integration"]
+    highlights: [
+      "Smart contract-powered campaign management",
+      "Token incentives for backers",
+      "Transparent on-chain fund tracking"
+    ],
+    roles: ["Frontend", "Web3"]
   },
   {
     slug: "vikraya",
     title: "Vikraya",
-    summary: "Blockchain crop auction",
-    description: "Your premier platform for agricultural auctions. A transparent bidding system for farmers to sell crops directly to buyers, ensuring fair prices through blockchain technology.",
+    summary: "Blockchain crop auction platform.",
+    description: "A decentralized bidding platform for farmers to sell crops directly to buyers through blockchain-verified auctions, ensuring fair pricing and transparent transactions.",
     logo: "/logos/vikraya.png",
     screenshot: "/screenshots/webp/vikraya.webp",
     links: { site: "https://vikraya.v19.tech" },
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Blockchain", "Solidity", "Ethers.js"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Solidity", "Ethers.js"],
     date: "2025-02-14",
     type: "personal",
-    highlights: ["Real-time bidding", "Farmer-centric UI", "Transparent ledger"],
-    roles: ["Frontend", "Design"]
+    highlights: [
+      "Real-time blockchain-verified bidding",
+      "Farmer-centric listing and auction UI",
+      "Transparent on-chain transaction ledger"
+    ],
+    roles: ["Frontend", "Web3"]
   },
   {
     slug: "lost-escapes",
     title: "Lost Escapes",
-    summary: "Boutique travel booking",
-    description: "Boutique Experiential Getaways. Discover unique experiences, exclusive destinations, and sustainable travel options with a high-end visual design.",
+    summary: "Boutique experiential travel platform.",
+    description: "A travel booking platform for handcrafted boutique getaways across Himachal Pradesh and Goa, featuring curated stays, destination storytelling, and sustainable tourism practices.",
     logo: "/logos/lostescapes.jpg",
     screenshot: "/screenshots/webp/lostescapes_light.webp",
     screenshotDark: "/screenshots/webp/lostescapes_dark.webp",
     links: { site: "https://lostescapes.com" },
-    type: "agency",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2025-07-01",
-    highlights: ["Luxury travel aesthetics", "Destination storytelling", "Conversion optimization"],
-    roles: ["Frontend", "Designer"]
+    type: "agency",
+    highlights: [
+      "Curated boutique stays with pricing",
+      "Destination storytelling and travel blog",
+      "Sustainable tourism-first approach"
+    ],
+    roles: ["Frontend", "Design"]
   },
   {
     slug: "rohtang-apiary",
     title: "Rohtang Apiary",
-    summary: "Himalayan bee farm",
-    description: "Pure Himalayan Honey. A clean, informative site for a sustainable bee farm, showcasing the story of the Himalayan honey bee and their products.",
+    summary: "Himalayan honey farm website.",
+    description: "An informative website for a sustainable Himalayan bee farm, showcasing pure unprocessed multi-floral honey from Apis cerana bees with zero-chemical beekeeping practices.",
     logo: "/logos/rohtang_apiary.png",
     screenshot: "/screenshots/webp/rohtangapiary.webp",
     links: { site: "https://www.rohtangapiary.com" },
-    type: "agency",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     date: "2025-05-20",
-    highlights: ["Story-driven layout", "Product showcase", "Educational content"],
-    roles: ["Frontend"]
+    type: "agency",
+    highlights: [
+      "Story-driven brand narrative",
+      "Product showcase with seasonal pricing",
+      "Gallery of farm operations and processes"
+    ],
+    roles: ["Frontend", "Design"]
   },
   // {
   //   slug: "doppleganger",
   //   title: "Doppleganger",
-  //   summary: "Interest-based matching",
-  //   description: "Find Your Doppelgänger! Connect with people who share your passions, interests, and quirks. Real-time chat matching based on shared interests.",
+  //   summary: "Interest-based matching.",
+  //   description: "Real-time chat matching platform that connects people who share passions, interests, and quirks through live interest-based pairing.",
   //   logo: "/logos/doppleganger.png",
   //   screenshot: "/screenshots/webp/doppleganger.webp",
   //   links: { site: "https://xdoppleganger.vercel.app" },
   //   tech: ["Next.js", "TypeScript", "Socket.io", "Node.js", "Express", "Redis"],
   //   date: "2025-12-18",
-  //   highlights: ["Real-time chat", "Interest matching algorithm", "Global community"],
-  //   roles: ["Frontend", "Backend"]
+  //   type: "personal",
+  //   highlights: ["Real-time chat matching", "Interest-based pairing algorithm", "Live global connections"],
+  //   roles: ["Full Stack"]
   // },
-  {
-    slug: "infernia",
-    title: "Infernia",
-    summary: "Personal vault & tracker",
-    description: "Dragon's Realm. A personal vault with diary and diet tracking features. Unleash your inner warrior with a gamified approach to personal tracking.",
-    logo: "/logos/infernia.png",
-    screenshot: "/screenshots/webp/infernia.webp",
-    links: { site: "https://infernia.v19.tech" },
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    date: "2025-03-08",
-    type: "personal",
-    highlights: ["Personal data visualization", "Secure diary", "Gamified UI"],
-    roles: ["Frontend"]
-  },
+  // {
+  //   slug: "infernia",
+  //   title: "Infernia",
+  //   summary: "Gamified personal vault.",
+  //   description: "A dragon-themed personal vault combining diary entries and diet tracking with gamification mechanics for an engaging approach to personal data management.",
+  //   logo: "/logos/infernia.png",
+  //   screenshot: "/screenshots/webp/infernia.webp",
+  //   links: { site: "https://infernia.v19.tech" },
+  //   tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+  //   date: "2025-03-08",
+  //   type: "personal",
+  //   highlights: [
+  //     "Gamified dragon-themed UI",
+  //     "Secure diary with daily entries",
+  //     "Diet and personal data tracking"
+  //   ],
+  //   roles: ["Full Stack"]
+  // },
   {
     slug: "ishta",
     title: "Ishta.",
-    summary: "Personal identity showcase",
-    description: "All About You & Your Favourite Things. A platform to share your whole vibe, favorites, and express yourself with elegant typography and minimal layouts.",
+    summary: "Personal identity showcase.",
+    description: "A digital space where users curate and share their interests, favorites, and personality through fully customizable profiles with elegant typography and minimal layouts.",
     logo: "/logos/ishta.png",
     screenshot: "/screenshots/webp/ishta_light.webp",
     screenshotDark: "/screenshots/webp/ishta_dark.webp",
     links: { site: "https://ishta.v19.tech" },
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2025-04-11",
     type: "personal",
-    highlights: ["Minimalist design", "Personal branding", "Dynamic layouts"],
-    roles: ["Frontend", "Designer"]
+    highlights: [
+      "Fully customizable personal profiles",
+      "Setup in under two minutes",
+      "Minimalist design with elegant typography"
+    ],
+    roles: ["Full Stack", "Design"]
   },
   {
     slug: "white-waters",
     title: "White Waters",
-    summary: "Adventure sports booking",
-    description: "Experience the thrill of kayaking, rafting, and mountain expeditions. A booking platform for adventure sports with bold visuals and comprehensive course details.",
+    summary: "Adventure sports booking platform.",
+    description: "A booking platform for an adventure tourism company offering kayaking, rafting, trekking, and mountain expeditions across the Himalayas with bold visuals and course galleries.",
     logo: "/logos/white_waters_v5.png",
     screenshot: "/screenshots/webp/whitewaters_light.webp",
     screenshotDark: "/screenshots/webp/whitewaters_dark.webp",
     links: { site: "https://whitewaters.vercel.app" },
-    type: "agency",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2025-09-28",
-    highlights: ["Adventure imagery", "Course booking system", "Interactive gallery"],
-    roles: ["Frontend"]
+    type: "agency",
+    highlights: [
+      "Adventure course catalog with booking",
+      "Immersive photography galleries",
+      "Safety-first service presentation"
+    ],
+    roles: ["Frontend", "Design"]
   },
   {
     slug: "karyakramah",
     title: "Kāryakramah",
-    summary: "Venue booking SaaS",
-    description: "Find and Book Perfect Venues. A comprehensive SaaS for venue discovery and booking, featuring real-time availability and extensive directories.",
+    summary: "Venue discovery and booking SaaS.",
+    description: "A comprehensive venue discovery and booking platform for Hyderabad, featuring real-time availability checking, streamlined booking processes, and an extensive venue directory.",
     logo: "/logos/karyakramah.png",
     screenshot: "/screenshots/webp/karyakramah_light.webp",
     screenshotDark: "/screenshots/webp/karyakramah_dark.webp",
@@ -370,14 +420,18 @@ export const works: WorkItem[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2025-05-21",
     type: "personal",
-    highlights: ["Real-time availability", "Multi-vendor platform", "Advanced search"],
-    roles: ["Frontend", "Designer", "Architecture"]
+    highlights: [
+      "Real-time venue availability checking",
+      "Streamlined multi-step booking flow",
+      "Extensive venue directory with search"
+    ],
+    roles: ["Full Stack", "Design", "System Design"]
   },
   {
     slug: "kanri",
     title: "Kanri",
-    summary: "Venue management admin",
-    description: "The powerful backend for Kāryakramah. Helps venue owners manage venues, update availability, and handle bookings with role-based access control.",
+    summary: "Venue management dashboard.",
+    description: "The admin backend for Kāryakramah, enabling venue owners to manage listings, update availability, handle bookings, and control access through role-based permissions.",
     logo: "/logos/karyakramah.png",
     screenshot: "/screenshots/webp/kanri_light.webp",
     screenshotDark: "/screenshots/webp/kanri_dark.webp",
@@ -385,35 +439,50 @@ export const works: WorkItem[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "2025-06-02",
     type: "personal",
-    highlights: ["Admin dashboard", "Booking management", "Role-based security"],
-    roles: ["Frontend", "System Design"]
+    highlights: [
+      "Venue listing management dashboard",
+      "Real-time booking and availability control",
+      "Role-based access for admins and owners"
+    ],
+    roles: ["Full Stack", "System Design"]
   },
-  {
-    slug: "kaizen",
-    title: "Kaizen",
-    summary: "Gamified Android fitness",
-    description: "Android app with gamified fitness tracking. Makes working out fun by adding game mechanics to your daily fitness routine.",
-    logo: "/logos/kaizen.png",
-    links: { site: "https://www.vashishtamithra.com/" },
-    tech: ["Android", "Kotlin", "Firebase", "Jetpack Compose", "Room"],
-    status: "Archive",
-    date: "2022-08-10",
-    highlights: ["Gamification mechanics", "Native Android UI", "Real-time tracking"],
-    roles: ["Mobile Development"]
-  },
-  {
-    slug: "krushi",
-    title: "Krushi",
-    summary: "IoT soil & animal monitoring",
-    description: "IoT system for agriculture monitoring. Integrates sensors for soil health and animal tracking with cloud data ingestion for real-time insights.",
-    logo: "/logos/krushi.png",
-    links: { repo: "https://github.com/Vashishta-Mithra-Reddy/Agro_T" },
-    tech: ["IoT", "Embedded C", "Cloud Computing", "MQTT", "Arduino", "DHT Sensors"],
-    status: "Archive",
-    date: "2021-11-20",
-    highlights: ["Hardware-software integration", "Real-time sensor data", "Cloud dashboard"],
-    roles: ["Hardware", "Backend"]
-  }
+  // {
+  //   slug: "kaizen",
+  //   title: "Kaizen",
+  //   summary: "Gamified fitness tracker app.",
+  //   description: "A native Android fitness application with gamification mechanics, making workouts engaging through game-inspired progress tracking and achievement systems.",
+  //   logo: "/logos/kaizen.png",
+  //   links: { site: "https://www.vashishtamithra.com/" },
+  //   tech: ["Kotlin", "Jetpack Compose", "Firebase", "Room"],
+  //   status: "Archived",
+  //   platform: "Android",
+  //   date: "2022-08-10",
+  //   type: "personal",
+  //   highlights: [
+  //     "Gamification mechanics for fitness goals",
+  //     "Native Android UI with Jetpack Compose",
+  //     "Real-time workout tracking"
+  //   ],
+  //   roles: ["Mobile"]
+  // },
+  // {
+  //   slug: "krushi",
+  //   title: "Krushi",
+  //   summary: "IoT agriculture monitoring system.",
+  //   description: "An IoT system for agricultural monitoring that detects animals, controls soil moisture, and streams sensor data to ThingSpeak for real-time cloud dashboards with IFTTT alerts.",
+  //   logo: "/logos/krushi.png",
+  //   links: { repo: "https://github.com/Vashishta-Mithra-Reddy/Agro_T" },
+  //   tech: ["C++", "Python", "Arduino", "IoT Sensors", "ThingSpeak", "IFTTT"],
+  //   status: "Archived",
+  //   date: "2023-04-06",
+  //   type: "personal",
+  //   highlights: [
+  //     "Animal detection and soil moisture control",
+  //     "Real-time sensor data streaming",
+  //     "Cloud dashboard with automated alerts"
+  //   ],
+  //   roles: ["Hardware", "Backend"]
+  // }
 ];
 
 export function getWorkList(): WorkItem[] {

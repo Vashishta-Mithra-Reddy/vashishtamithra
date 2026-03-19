@@ -12,8 +12,8 @@ export async function GET() {
 //   );
   
   // Custom grouping based on the known list logic from previous context
-  const aiProductTitles = ['Navi', 'Sift', 'Hita', 'Contxt', 'Kāryakramah', 'Kanri'];
-  const agencyTitles = ['HireSynQ', 'Socionova', 'Citadel', 'Rare Cocoa', 'The Baga Village', 'Lost Escapes', 'Rohtang Apiary', 'White Waters'];
+  const aiProductTitles = ['Navi', 'Sift', 'Hita', 'Contxt', 'Citadel', 'Kāryakramah', 'Kanri'];
+  const agencyTitles = ['HireSynQ', 'Socionova', 'Rare Cocoa', 'The Baga Village', 'Lost Escapes', 'Rohtang Apiary', 'White Waters'];
   const experientialTitles = ['Why Kerala?', 'Ishta.', 'Infernia', 'Ahāra', 'Saransha', 'Nidhi', 'Vikraya', 'Kāryakramah AU', 'Kaizen', 'Krushi'];
 
   const byTitleMatch = (titles: string[]) => works.filter(w => titles.some(t => w.title.includes(t)));

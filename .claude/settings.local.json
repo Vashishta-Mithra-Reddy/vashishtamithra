@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:hiresynq.vercel.app)",
+      "WebFetch(domain:www.rarecocoa.in)",
+      "WebFetch(domain:socionova.in)",
+      "WebFetch(domain:navi.v19.tech)",
+      "WebFetch(domain:sift.v19.tech)",
+      "WebFetch(domain:au.karyakramah.com)",
+      "WebFetch(domain:hita.v19.tech)",
+      "WebFetch(domain:contxt.v19.tech)",
+      "WebFetch(domain:ahara.v19.tech)",
+      "WebFetch(domain:citadel.v19.tech)",
+      "WebFetch(domain:saransha.vercel.app)",
+      "WebFetch(domain:whykerala.v19.tech)",
+      "WebFetch(domain:bagavillage.vercel.app)",
+      "WebFetch(domain:nidhi.v19.tech)",
+      "WebFetch(domain:vikraya.v19.tech)",
+      "WebFetch(domain:lostescapes.com)",
+      "WebFetch(domain:www.rohtangapiary.com)",
+      "WebFetch(domain:infernia.v19.tech)",
+      "WebFetch(domain:ishta.v19.tech)",
+      "WebFetch(domain:whitewaters.vercel.app)",
+      "WebFetch(domain:karyakramah.v19.tech)",
+      "WebFetch(domain:kanri.v19.tech)",
+      "Bash(gh api:*)",
+      "Bash(npx next:*)"
+    ]
+  }
+}
