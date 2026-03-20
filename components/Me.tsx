@@ -4,6 +4,7 @@ import TextReveal from "./animations/TextReveal";
 import ContributionGraph from "./contribution-graph";
 import AnimatedHeading from "./AnimatedHeading";
 import HeroImage from "./HeroImage";
+import IntroText from "./IntroText";
 import { SKILLS, EXPERIENCES } from "@/data/profile";
 
 export default function Me() {
@@ -26,18 +27,15 @@ export default function Me() {
                 About Me
               </h2>
             </FadeInWhenVisible> */}
-            <TextReveal>
+            {/* <TextReveal delay={0.10}>
               <p className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed">
                 I'm <span className="text-foreground underline underline-offset-4 decoration-wavy decoration-blue-500">Vashishta</span> a product-focused Founding Engineer who loves building 0-to-1 AI applications.
-                {/* I specialize in the <span className="font-semibold text-foreground">Next.js, Supabase, and Neon DB</span> ecosystem,
-                with a deep focus on <span className="font-semibold text-foreground">RAG</span> and automation. */}
+                I specialize in the <span className="font-semibold text-foreground">Next.js, Supabase, and Neon DB</span> ecosystem,
+                with a deep focus on <span className="font-semibold text-foreground">RAG</span> and automation.
               </p>
-            </TextReveal>
-            <TextReveal
-              text="I have a proven track record of architecting and shipping production-ready MVPs for international startups, obsessing over performance, scalability, and clean system design."
-              delay={0.15}
-              className="text-base sm:text-lg lg:text-xl text-foreground/80 font-bricolage leading-relaxed mt-4"
-            />
+            </TextReveal> */}
+            
+            <IntroText />
           </div>
 
           {/* Socials - Commented out as requested */}

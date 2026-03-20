@@ -92,7 +92,7 @@ export default async function WorkPage({
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-16 pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 pb-8 md:px-10 md:pb-10 lg:px-16 lg:pb-12">
           <StaggerFadeIn>
             <div className="flex flex-col gap-4">
               {/* <Link
@@ -103,7 +103,7 @@ export default async function WorkPage({
               </Link> */}
               <div className="flex items-center gap-4 lg:gap-6">
                 {item.logo && (
-                  <div className="relative w-16 h-16 lg:w-24 lg:h-24 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border-2 border-border border-dotted">
+                  <div className="relative w-16 h-16 lg:w-24 lg:h-24 rounded-lg md:rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border-2 border-border border-dotted">
                     <Image
                       src={
                         Array.isArray(item.logo)
@@ -161,7 +161,7 @@ export default async function WorkPage({
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-20 pt-4 pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+      <div className="max-w-7xl mx-auto px-5 pt-4 pb-16 md:px-10 lg:px-20 lg:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         {/* Left Column: Content */}
         <div className="lg:col-span-8 space-y-16">
           {/* Description */}
